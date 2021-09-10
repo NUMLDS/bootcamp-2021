@@ -1,4 +1,4 @@
-# 2019 MSiA boot camp
+# 2021 MSiA boot camp
 
 This Github repository contains materials for the R sessions of the 2019 Masters of Science in Analytics program boot camp, including lecture notes, slides, exercises, and recommended resources as you continue to develop your skills. 
 
@@ -6,12 +6,12 @@ This Github repository contains materials for the R sessions of the 2019 Masters
 
 |Session|Content|Lecture notes|Slides|Exercises|
 |-------|-------|-------------|------|---------|
-|Day 1, part 1<br />Tue, 9/17 (morning)|Review; Reading and writing files; Data manipulation in base R; Data visualization in base R|[Lecture notes](https://msia.github.io/bootcamp-2019/lecturenotes/day1part1_R-intro_lecturenotes_kr)|[Slides](https://msia.github.io/bootcamp-2019/lectureslides/day1part1_R-intro_slides_kr.html)|[Exercises](https://github.com/MSIA/bootcamp-2019/blob/master/exercises/day1part1_R-intro_exercises.R) and [Answers](https://github.com/MSIA/bootcamp-2019/blob/master/exercises/day1part1_R-intro_exercises_with_answers.R)|
-|Day 1, part 2<br />Tue, 9/17 (afternoon)|RMarkdown; Loops, conditionals, and functions; R and Github|[Lecture notes](https://msia.github.io/bootcamp-2019/lecturenotes/day1part2_R-loops-conditionals-functions_lecturenotes_rm)|[Slides](https://msia.github.io/bootcamp-2019/lectureslides/day1part2_R-loops-conditionals-functions_slides_rm.html)|[Exercises](https://msia.github.io/bootcamp-2019/exercises/day1part2_exercises_no_answers.html) and [Answers](https://msia.github.io/bootcamp-2019/exercises/day1part2_exercises_with_answers.html)|
-|Day 2<br />Wed, 9/18 (afternoon) |Advanced manipulation: reshaping, merging, dplyr, and data.table|[Lecture notes, pt 1](https://msia.github.io/bootcamp-2019/lecturenotes/day2part1_R-adv_manipulation_dplyr_lecturenotes_kr)<br />[Lecture notes, pt 2](https://msia.github.io/bootcamp-2019/lecturenotes/day2part2_R-adv_manipulation_datatable_lecturenotes_ae)|[Slides, pt 1](https://msia.github.io/bootcamp-2019/lectureslides/day2part1_R-adv_manipulation_dplyr_slides_kr.html)<br />[Slides, pt 2](https://msia.github.io/bootcamp-2019/lectureslides/day2part2_R-adv_manipulation_datatable_slides_ae.html)|[Exercises](https://msia.github.io/bootcamp-2019/exercises/day2_exercises_no_answers.html) and [Answers](https://msia.github.io/bootcamp-2019/exercises/day2_exercises_with_answers.html)|
-|Day 3<br />Thu, 9/19 (morning)|Data visualization with ggplot|[Lecture notes](https://msia.github.io/bootcamp-2019/lecturenotes/day3_R-ggplot_lecturenotes_kr_rm)|[Slides](https://msia.github.io/bootcamp-2019/lectureslides/day3_R-ggplot_slides_kr.html)|[Exercises](https://msia.github.io/bootcamp-2019/exercises/day3_ggplot_exercises.md)|
+|R1 & R2<br />Mon, 9/13|Basic syntax and data structures; Reading and writing files; Data manipulation and visualization in base R|[Lecture notes](https://msia.github.io/bootcamp-2021/lecturenotes/day1part1_R-intro_lecturenotes_kr)|[Slides](https://msia.github.io/bootcamp-2021/lectureslides/day1part1_R-intro_slides_kr.html)|[Exercises](https://github.com/MSIA/bootcamp-2021/blob/master/exercises/day1part1_R-intro_exercises.R) and [Answers](https://github.com/MSIA/bootcamp-2021/blob/master/exercises/day1part1_R-intro_exercises_with_answers.R)|
+|R3 & R4<br />Wed, 9/15|RMarkdown; Loops, conditionals, and functions; R and Github|[Lecture notes](https://msia.github.io/bootcamp-2021/lecturenotes/day1part2_R-loops-conditionals-functions_lecturenotes_rm)|[Slides](https://msia.github.io/bootcamp-2021/lectureslides/day1part2_R-loops-conditionals-functions_slides_rm.html)|[Exercises](https://msia.github.io/bootcamp-2021/exercises/day1part2_exercises_no_answers.html) and [Answers](https://msia.github.io/bootcamp-2021/exercises/day1part2_exercises_with_answers.html)|
+|R5 & R6<br />Thu, 9/16|Advanced manipulation: reshaping, merging, dplyr, and data.table|[Lecture notes, pt 1](https://msia.github.io/bootcamp-2021/lecturenotes/day2part1_R-adv_manipulation_dplyr_lecturenotes_kr)<br />[Lecture notes, pt 2](https://msia.github.io/bootcamp-2021/lecturenotes/day2part2_R-adv_manipulation_datatable_lecturenotes_ae)|[Slides, pt 1](https://msia.github.io/bootcamp-2021/lectureslides/day2part1_R-adv_manipulation_dplyr_slides_kr.html)<br />[Slides, pt 2](https://msia.github.io/bootcamp-2021/lectureslides/day2part2_R-adv_manipulation_datatable_slides_ae.html)|[Exercises](https://msia.github.io/bootcamp-2021/exercises/day2_exercises_no_answers.html) and [Answers](https://msia.github.io/bootcamp-2021/exercises/day2_exercises_with_answers.html)|
+|R7 & R8<br />Mon, 9/20|Data visualization with ggplot|[Lecture notes](https://msia.github.io/bootcamp-2021/lecturenotes/day3_R-ggplot_lecturenotes_kr_rm)|[Slides](https://msia.github.io/bootcamp-2021/lectureslides/day3_R-ggplot_slides_kr.html)|[Exercises](https://msia.github.io/bootcamp-2021/exercises/day3_ggplot_exercises.md)|
 
-Instructions for the final exercise on 9/19 can be found [here](https://github.com/MSIA/bootcamp-2019/blob/master/exercises/day3_final-exercise-instructions.md).
+Instructions for the final exercise on 9/20 can be found [here](https://github.com/MSIA/bootcamp-2021/blob/master/exercises/day3_final-exercise-instructions.md).
 
 ## Resources
 
@@ -40,10 +40,11 @@ NUIT also has a [Git resource list](https://github.com/nuitrcs/gitworkshop).
 
 ## Authorship
 
-The R materials used on 9/17 and 9/18 are based on the [Intro to R workshop](https://github.com/nuitrcs/r_intro_june2018) from NUIT Research Computing Services, created by Christina Maimone. They have been expanded and modified by Kumar Ramanathan and Richard Morel. The materials on data.table used on 9/18 were originally developed by Ali Ehlen. The materials on ggplot2 used on 9/19 were originally developed by Kumar Ramanathan. Richard Morel, Ali Ehlen, and Kumar Ramanathan all jointly developed the overarching sequence of the sessions as well as the synthetic final exercise on 9/19. 
+The R materials used for R1-R5 are based on the [Intro to R workshop](https://github.com/nuitrcs/r_intro_june2018) from NUIT Research Computing Services, created by Christina Maimone. They have been expanded and modified by Kumar Ramanathan and Richard Morel. The materials on data.table used in R6 were originally developed by Ali Ehlen. The materials on ggplot2 used in R7 were originally developed by Kumar Ramanathan. Richard Morel, Ali Ehlen, and Kumar Ramanathan all jointly developed the overarching sequence of the sessions as well as the synthetic final exercise in R8. 
 
 ## Contact information
 
 - Kumar Ramanathan: [Email](mailto:kumar.ramanathan@u.northwestern.edu) | [Website](http://www.kumar.fyi)
+- Tucker Lewis: [Email](mailto:matthewlewis2018@u.northwestern.edu) 
 - Richard Morel: [Email](mailto:richard.morel@u.northwestern.edu) | [Website](http://ramorel.github.io)
 - Ali Ehlen: [Email](mailto:AnnalieseEhlen2020@u.northwestern.edu)
