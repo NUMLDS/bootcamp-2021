@@ -51,7 +51,7 @@ Much of R's power comes from contributed packages. You can install and manage pa
 install.packages("tidyverse")
 ```
 
-The RStudio Server Pro install that you are using already has `tidyverse` and some other common packages installed at the system-level, so you will not actually need to do this step. But *do* take note of this material, as you will likely need to install packages in the future. You can easily check what packages have been installed already in the "Packages" tab on the bottom-right pane.
+When you install R and RStudio Desktop on your local computer, "base R" packages are already installed and you will need to install any other packages you want touse. When you access RStudio Server Pro through the MSIA server, some common packages are already installed at the system-level, so you will not actually need to do this step. You can easily check what packages have been installed already in the "Packages" tab on the bottom-right pane.
 
 Note that `tidyverse` is a composite package that will install multiple component packages and their dependencies. It includes `dplyr` and `ggplot2`, which we will use extensively on Day 3 of the boot camp. You'll get a lot of messages as the installation happens.
 
@@ -79,27 +79,7 @@ To access a help file, enter `?functionName` into the console or use the Help ta
 
 Sometimes different packages will include functions with the same name. To make sure you are using the function from the right package, you can use the following syntax: `packageName::functionName()`.
 
-
-# Recall your DataCamp course
-
-By now, you should all have completed the *Introduction to R* course on DataCamp. Congratulations! You already know quite a lot about how R works. To refresh, you covered the following material in your course:
-
-- Arithmetic with R
-- Variable assignment
-- Data types, including:
-    - Character
-    - Numeric
-    - Logical
-    - Factors
-- Data structures, including:
-    - Vectors
-    - Matricies
-    - Data frames
-    - Lists
-    
-In these lecture notes, we will review all of the above. In the lecture slides, we will move through these topics quickly, and mostly in the form of exercises, focusing our attention on some new material: reading and writing files, basic data manipulation, and basic data visualization.
-
-# Review: Basics and data types
+# Basics and data types
 
 A good reference for R Basics is the [Base R Cheat Sheet](https://www.rstudio.com/wp-content/uploads/2016/10/r-cheat-sheet-3.pdf).
 
@@ -110,13 +90,26 @@ Remember, to run a line of code from a script file in RStudio:
 
 ## Arithmetic
 
-Let's recall how to do some basic arithmetic in R:
+Here are the basic arithmetic operators in R:
 
 ```{r}
+# Addition 
 2+2
-5%%2
+
+# Subtraction
+6-2
+
+# Multiplication
 3.452*6
+
+# Division
+5/2
+
+# Exponent
 2^4
+
+# Modulo (returns remainder after division)
+5%%2
 ```
 
 You can use `?Arithmetic` to pull up the help for arithmetic operators.
@@ -191,11 +184,11 @@ There are a few types of data in R:
 * character: `"text data"`, denoted with single or double quotes
 
 ```{r}
-typeof(TRUE)
-typeof("foo")
+class(TRUE)
+class("foo")
 ```
 
-# Review: Data structures
+# Data structures
 
 ## Vectors
 

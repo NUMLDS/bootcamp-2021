@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="generator" content="pandoc">
   <meta name="author" content="Kumar Ramanathan" />
-  <meta name="dcterms.date" content="2021-09-10" />
+  <meta name="dcterms.date" content="2021-09-12" />
   <title>Intro to R: Day 1</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -518,7 +518,7 @@ document.getElementsByTagName('head')[0].appendChild(style);
 <section>
     <h1 class="title">Intro to R: Day 1</h1>
     <h2 class="author">Kumar Ramanathan</h2>
-    <h3 class="date">2021-09-10</h3>
+    <h3 class="date">2021-09-12</h3>
 </section>
 
 <section>
@@ -535,15 +535,20 @@ document.getElementsByTagName('head')[0].appendChild(style);
 <li class="fragment">R has a large community of users</li>
 </ul>
 </section>
-<section id="rstudio-and-rstudio-server" class="slide level2">
-<h2>RStudio and RStudio Server</h2>
+<section id="what-is-rstudio" class="slide level2">
+<h2>What is RStudio?</h2>
 <ul>
 <li class="fragment">RStudio refers to both the company and the software</li>
 <li class="fragment">RStudio is an integrated development environment (IDE) for R</li>
-<li class="fragment">You will be using RStudio Server Pro</li>
+<li class="fragment">RStudio Desktop is the most commonly used version of the software</li>
+<li class="fragment">You will also have access to RStudio Server Pro through the MSIA program</li>
 </ul>
+</section>
+<section id="exploring-the-ide" class="slide level2">
+<h2>Exploring the IDE</h2>
+<p><img data-src="figures/rstudio_screenshot.PNG" /></p>
 <aside class="notes">
-RStudio helps you organize your workflow and keep track of your work. The top-left pane is where you open, work on, and save script files. The bottom-left pane includes the console, which is where your code actually “runs”. The right-hand side panes include tools for manging your environment, workspace, and packages; for plotting and graphics; for accessing help files; and more.
+<p>RStudio helps you organize your workflow and keep track of your work. The top-left pane is where you open, work on, and save script files. The bottom-left pane includes the console, which is where your code actually “runs”. The right-hand side panes include tools for manging your environment, workspace, and packages; for plotting and graphics; for accessing help files; and more.</p>
 </aside>
 </section>
 <section id="some-key-concepts" class="slide level2">
@@ -554,12 +559,11 @@ RStudio helps you organize your workflow and keep track of your work. The top-le
 <li class="fragment">Packages</li>
 <li class="fragment">Functions</li>
 <li class="fragment">Help files</li>
+<li class="fragment">Comments (anything following <code>#</code> in a code file)</li>
 </ul>
 </section>
-<section id="recall-your-datacamp-course" class="slide level2">
-<h2>Recall your DataCamp course</h2>
-<p>By now, you have all completed the <em>Introduction to R</em> course on DataCamp. Congratulations! You already know quite a lot about how R works.</p>
-<p>To refresh, you covered the following material in your course:</p>
+<section id="starting-with-the-basics" class="slide level2">
+<h2>Starting with the basics</h2>
 <ul>
 <li class="fragment">Arithmetic with R</li>
 <li class="fragment">Objects and variable assignment</li>
@@ -567,18 +571,26 @@ RStudio helps you organize your workflow and keep track of your work. The top-le
 <li class="fragment">Data structures, incl.: vectors, matricies, data frames, lists</li>
 </ul>
 <aside class="notes">
-Today, we will briefly review the above topics, and then turn to new material on reading and writing files, data manipulation, and data visualization.
+<p>The above topics are the basics you need to learn before we start working with “real” data.</p>
 </aside>
 </section>
-<section id="copy-relevant-folders" class="slide level2">
-<h2>Copy relevant folders</h2>
-<p>We will be working on some exercises and using data files in the next few hours. To do this, you will need to fork and clone the bootcamp-2019 github repository.</p>
-<p>Recall that yesterday, you learned and practiced how to do this using the Terminal. R Studio includes a Terminal tab (if you don’t see it, go to the Tools &gt; Terminal &gt; Move Focus to Terminal), and we will use this today.</p>
+<section id="our-materials" class="slide level2">
+<h2>Our materials</h2>
+<p>All of our materials are available at www.github.com/msia/bootcamp-2021. Today, you will only need to work with two files: <code>R1_exercises.R</code> from the <code>exercises</code> directory and <code>gampinder5.csv</code> from the <code>data</code> directory.</p>
+<p>Starting with the R3 session on Wednesday, you will be working with a much wider set of files. On Wednesday, you will learn how to make a copy of the whole bootcamp-2021 repository using Git.</p>
 </section></section>
 <section>
-<section id="review-basics-and-data-types" class="title-slide slide level1">
-<h1>Review: Basics and data types</h1>
+<section id="basics-and-data-types" class="title-slide slide level1">
+<h1>Basics and data types</h1>
 
+</section>
+<section id="arithmetic-and-objects" class="slide level2">
+<h2>Arithmetic and objects</h2>
+<p>At its most basic level, you can use R as a calculator. The basic operators are all what you would expect for addition (<code>+</code>), subtraction (<code>-</code>), multiplication (<code>*</code>), division (<code>/</code>), and exponentiation (<code>^</code>). You can use parentheses to indicate which operation should take place first.</p>
+<p>You can save numbers or the results of operations as <em>objects</em> (whose names must start with a character) using the assignment operator <code>&lt;-</code> or a single equal sign <code>=</code>. We sometimes call these objects <em>variables</em>. Look in the <strong>Environment</strong> to see what objects currently exist.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">11</span><span class="sc">*</span><span class="dv">5</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>x</span></code></pre></div>
+<pre><code>## [1] 55</code></pre>
 </section>
 <section id="arithmetic-exercise" class="slide level2">
 <h2>Arithmetic: exercise</h2>
@@ -586,22 +598,85 @@ Today, we will briefly review the above topics, and then turn to new material on
 <ul>
 <li>Pick a number; save it as <code>x</code></li>
 <li>Multiply x by 3</li>
-<li>Take the log of the above <br><small>(Hint, you need the function <code>log()</code> here)</small></li>
+<li>Divide x by 2</li>
 <li>Subtract 4 from the above</li>
 <li>Square the above</li>
 </ul>
 </section>
 <section id="arithmetic-exercise-1" class="slide level2">
 <h2>Arithmetic: exercise</h2>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">5</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>x<span class="sc">*</span><span class="dv">3</span></span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">5</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>x<span class="sc">*</span><span class="dv">3</span></span></code></pre></div>
 <pre><code>## [1] 15</code></pre>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">log</span>(x<span class="sc">*</span><span class="dv">3</span>)</span></code></pre></div>
-<pre><code>## [1] 2.70805</code></pre>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">log</span>(x<span class="sc">*</span><span class="dv">3</span>)<span class="sc">-</span><span class="dv">4</span></span></code></pre></div>
-<pre><code>## [1] -1.29195</code></pre>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>(<span class="fu">log</span>(x<span class="sc">*</span><span class="dv">3</span>)<span class="sc">-</span><span class="dv">4</span>)<span class="sc">^</span><span class="dv">2</span></span></code></pre></div>
-<pre><code>## [1] 1.669134</code></pre>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>x<span class="sc">/</span><span class="dv">2</span></span></code></pre></div>
+<pre><code>## [1] 2.5</code></pre>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>(x<span class="sc">/</span><span class="dv">2</span>)<span class="sc">-</span><span class="dv">4</span></span></code></pre></div>
+<pre><code>## [1] -1.5</code></pre>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>((x<span class="sc">/</span><span class="dv">2</span>)<span class="sc">-</span><span class="dv">4</span>)<span class="sc">^</span><span class="dv">2</span></span></code></pre></div>
+<pre><code>## [1] 2.25</code></pre>
+</section>
+<section id="functions" class="slide level2">
+<h2>Functions</h2>
+<p>Functions are called with <code>functionName(parameters)</code>. Multiple paramters are <em>comma-separated</em>. Paramters can be named. For unnamed parameters, the order matters. R functions don’t change the objects passed to them (more on this later).</p>
+<p>Let’s take a look at a simple function, <code>log()</code>, which takes the log of a number. You can access its help file by entering <code>?log</code> in the console. Do so now. What does the function do? What are the arguments?</p>
+</section>
+<section id="functions-1" class="slide level2">
+<h2>Functions</h2>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Take the natural log of 10</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="fu">log</span>(<span class="dv">10</span>)</span></code></pre></div>
+<pre><code>## [1] 2.302585</code></pre>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Take the log of 10 with base-19</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="fu">log</span>(<span class="dv">10</span>, <span class="at">base=</span><span class="dv">10</span>)</span></code></pre></div>
+<pre><code>## [1] 1</code></pre>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Store the result of log(10) as a variable</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="fu">log</span>(<span class="dv">10</span>)</span></code></pre></div>
+</section>
+<section id="data-types" class="slide level2">
+<h2>Data types</h2>
+<ul>
+<li class="fragment"><p><strong>numeric</strong>: real or decimal</p>
+<ul>
+<li class="fragment"><p><strong>integer</strong>: a specific type; most numbers are numeric instead</p></li>
+<li class="fragment"><p><strong>complex</strong>: ex: <code>2+5i</code></p></li>
+</ul></li>
+<li class="fragment"><p><strong>character</strong>: <code>"text data"</code>, denoted with quotes <br><small>(<code>'single quotes'</code> and <code>"double quotes"</code> both work)</small></p></li>
+<li class="fragment"><p><strong>logical</strong>: <code>TRUE</code> or <code>FALSE</code> <br><small>(When coerced into numeric type, <code>TRUE</code>=<code>1</code> and <code>FALSE</code>=<code>0</code>)</small></p></li>
+<li class="fragment"><p>Use <code>class()</code> on an object to check its type</p></li>
+</ul>
+</section>
+<section id="data-types-1" class="slide level2">
+<h2>Data types</h2>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="st">&quot;some text&quot;</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>x</span></code></pre></div>
+<pre><code>## [1] &quot;some text&quot;</code></pre>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(x)</span></code></pre></div>
+<pre><code>## [1] &quot;character&quot;</code></pre>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">5</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>x</span></code></pre></div>
+<pre><code>## [1] 5</code></pre>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(x)</span></code></pre></div>
+<pre><code>## [1] &quot;numeric&quot;</code></pre>
+</section>
+<section id="comparisons-and-logical-operators" class="slide level2">
+<h2>Comparisons and Logical Operators</h2>
+<p>The basic logical operators in R are:</p>
+<ul>
+<li><p><code>==</code> for “is equal”; <code>!</code> for “is not”</p></li>
+<li><p><code>&amp;</code> for “and”; <code>|</code> for “or”</p></li>
+<li><p><code>&lt;</code> for “lesser than”; <code>&gt;</code> for “more than”</p></li>
+</ul>
+<p>A statement with logical operators will return a logical object <code>TRUE</code> or <code>FALSE</code>.</p>
+</section>
+<section id="comparisons-and-logical-operators-1" class="slide level2">
+<h2>Comparisons and Logical Operators</h2>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="dv">5</span> <span class="sc">&gt;</span> <span class="dv">4</span></span></code></pre></div>
+<pre><code>## [1] TRUE</code></pre>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>(<span class="dv">5</span> <span class="sc">&gt;</span> <span class="dv">4</span>) <span class="sc">&amp;</span> (<span class="dv">4</span> <span class="sc">&lt;</span> <span class="dv">5</span>)</span></code></pre></div>
+<pre><code>## [1] TRUE</code></pre>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>(<span class="dv">5</span> <span class="sc">&gt;</span> <span class="dv">4</span>) <span class="sc">|</span> (<span class="dv">4</span> <span class="sc">&lt;</span> <span class="dv">5</span>)</span></code></pre></div>
+<pre><code>## [1] TRUE</code></pre>
+<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="sc">!</span>(<span class="dv">4</span> <span class="sc">&gt;</span> <span class="dv">5</span>)</span></code></pre></div>
+<pre><code>## [1] TRUE</code></pre>
 </section>
 <section id="comparisons-and-logical-operators-exercise" class="slide level2">
 <h2>Comparisons and Logical Operators: exercise</h2>
@@ -615,62 +690,64 @@ Today, we will briefly review the above topics, and then turn to new material on
 </section>
 <section id="comparisons-and-logical-operators-exercise-1" class="slide level2">
 <h2>Comparisons and Logical Operators: exercise</h2>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="sc">&gt;</span> <span class="dv">2</span></span></code></pre></div>
+<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="sc">&gt;</span> <span class="dv">2</span></span></code></pre></div>
 <pre><code>## [1] FALSE</code></pre>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>(<span class="dv">1</span> <span class="sc">+</span> <span class="dv">1</span>) <span class="sc">==</span> <span class="dv">2</span></span></code></pre></div>
+<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>(<span class="dv">1</span> <span class="sc">+</span> <span class="dv">1</span>) <span class="sc">==</span> <span class="dv">2</span></span></code></pre></div>
 <pre><code>## [1] TRUE</code></pre>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="st">&quot;eat&quot;</span> <span class="sc">!=</span> <span class="st">&#39;drink&#39;</span></span></code></pre></div>
+<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="st">&quot;eat&quot;</span> <span class="sc">!=</span> <span class="st">&#39;drink&#39;</span></span></code></pre></div>
 <pre><code>## [1] TRUE</code></pre>
-<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>(<span class="dv">1</span><span class="sc">==</span><span class="dv">1</span>) <span class="sc">&amp;</span> (<span class="dv">1</span><span class="sc">==</span><span class="dv">2</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>(<span class="dv">1</span><span class="sc">==</span><span class="dv">1</span>) <span class="sc">&amp;</span> (<span class="dv">1</span><span class="sc">==</span><span class="dv">2</span>)</span></code></pre></div>
 <pre><code>## [1] FALSE</code></pre>
-<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>(<span class="dv">1</span><span class="sc">==</span><span class="dv">1</span>) <span class="sc">|</span> (<span class="dv">1</span><span class="sc">==</span><span class="dv">2</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>(<span class="dv">1</span><span class="sc">==</span><span class="dv">1</span>) <span class="sc">|</span> (<span class="dv">1</span><span class="sc">==</span><span class="dv">2</span>)</span></code></pre></div>
 <pre><code>## [1] TRUE</code></pre>
 </section>
 <section id="packages" class="slide level2">
 <h2>Packages</h2>
 <ul>
-<li>Load the package <code>tidyverse</code> <br><small>(It has already been installed for you on the system-level)</small></li>
+<li>Install the package <code>tidyverse</code><br><small>(You only need to do this the first time)</small></li>
+<li>Load the package <code>tidyverse</code></li>
 <li>Open the help file for the function <code>recode</code> <br><small>(Hint: remember what <code>?</code> does)</small></li>
 </ul>
 </section>
 <section id="packages-1" class="slide level2">
 <h2>Packages</h2>
-<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>?recode</span></code></pre></div>
-<p>Remember, if you need to install a package:</p>
-<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;tidyverse&quot;</span>)</span></code></pre></div>
-</section>
-<section id="data-types" class="slide level2">
-<h2>Data types</h2>
-<ul>
-<li class="fragment"><strong>logical</strong>: <code>TRUE</code> or <code>FALSE</code> <br><small>(When coerced into numeric type, <code>TRUE</code>=<code>1</code> and <code>FALSE</code>=<code>0</code>)</small></li>
-<li class="fragment"><strong>integer</strong>: a specific type; most numbers are numeric instead</li>
-<li class="fragment"><strong>numeric</strong>: real or decimal</li>
-<li class="fragment"><strong>complex</strong>: ex: <code>2+5i</code></li>
-<li class="fragment"><strong>character</strong>: <code>"text data"</code>, denoted with quotes <br><small>(<code>'single quotes'</code> and <code>"double quotes"</code> both work)</small></li>
-<li class="fragment">Use <code>typeof()</code> on an object to check its type</li>
-</ul>
+<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;tidyverse&quot;</span>)</span>
+<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb42-4"><a href="#cb42-4" aria-hidden="true" tabindex="-1"></a>?recode</span></code></pre></div>
 </section></section>
 <section>
-<section id="review-data-structures" class="title-slide slide level1">
-<h1>Review: Data structures</h1>
+<section id="data-structures" class="title-slide slide level1">
+<h1>Data structures</h1>
 
 </section>
 <section id="vectors" class="slide level2">
 <h2>Vectors</h2>
 <ul>
-<li class="fragment">Vectors store multiple values of a single data type</li>
-<li class="fragment">Create a vector using the <code>c()</code> function</li>
-<li class="fragment">Vectors are <em>homogenous</em>: each vector can only contain one data type</li>
-<li class="fragment">Arithmetic operators and many functions can apply to vectors</li>
-<li class="fragment">Vectors can be <em>indexed</em> by:
+<li class="fragment"><p>Vectors store multiple values of a <strong>single</strong> data type (i.e. vectors are <em>homogeneous</em>)</p></li>
+<li class="fragment"><p>Create a vector using the <code>c()</code> function</p></li>
+<li class="fragment"><p>Arithmetic operators and many functions can apply to vectors (i.e. some functions are <em>vectorized</em>)</p></li>
+<li class="fragment"><p>Vectors can be <em>indexed</em> by:</p>
 <ul>
 <li class="fragment">element position (<code>vec[1]</code>)</li>
 <li class="fragment">‘slice’ position (<code>vec[1:3]</code>)</li>
 <li class="fragment">condition (<code>vec[vec&gt;2]</code>).</li>
 </ul></li>
 </ul>
+</section>
+<section id="vectors-1" class="slide level2">
+<h2>Vectors</h2>
+<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a>vec <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;yes&quot;</span>, <span class="st">&quot;no&quot;</span>, <span class="st">&quot;maybe&quot;</span>)</span>
+<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a>vec <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>)</span>
+<span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-4"><a href="#cb43-4" aria-hidden="true" tabindex="-1"></a>vec[<span class="dv">1</span>]</span></code></pre></div>
+<pre><code>## [1] 1</code></pre>
+<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a>vec[vec<span class="sc">&lt;</span><span class="dv">3</span>]</span></code></pre></div>
+<pre><code>## [1] 1 2</code></pre>
+<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a>vec<span class="sc">*</span><span class="dv">2</span></span></code></pre></div>
+<pre><code>## [1] 2 4 6</code></pre>
+<div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="fu">log</span>(vec)</span></code></pre></div>
+<pre><code>## [1] 0.0000000 0.6931472 1.0986123</code></pre>
 </section>
 <section id="vectors-exercise" class="slide level2">
 <h2>Vectors: exercise</h2>
@@ -686,37 +763,43 @@ Today, we will briefly review the above topics, and then turn to new material on
 </section>
 <section id="vectors-exercise-1" class="slide level2">
 <h2>Vectors: exercise</h2>
-<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">1234</span>) </span>
-<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>x1 <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">5</span>)</span>
-<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>x2 <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">20</span>, <span class="at">mean=</span><span class="fl">0.5</span>)</span>
-<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>x1[<span class="dv">3</span>]</span></code></pre></div>
+<div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">1234</span>) </span>
+<span id="cb51-2"><a href="#cb51-2" aria-hidden="true" tabindex="-1"></a>x1 <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">5</span>)</span>
+<span id="cb51-3"><a href="#cb51-3" aria-hidden="true" tabindex="-1"></a>x2 <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">20</span>, <span class="at">mean=</span><span class="fl">0.5</span>)</span>
+<span id="cb51-4"><a href="#cb51-4" aria-hidden="true" tabindex="-1"></a>x1[<span class="dv">3</span>]</span></code></pre></div>
 <pre><code>## [1] 1.084441</code></pre>
-<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>x1[x1 <span class="sc">&lt;</span> <span class="dv">0</span>]</span></code></pre></div>
+<div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a>x1[x1 <span class="sc">&lt;</span> <span class="dv">0</span>]</span></code></pre></div>
 <pre><code>## [1] -1.207066 -2.345698</code></pre>
-<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>x2[x2 <span class="sc">&gt;</span> <span class="dv">1</span>]</span></code></pre></div>
+<div class="sourceCode" id="cb55"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a>x2[x2 <span class="sc">&gt;</span> <span class="dv">1</span>]</span></code></pre></div>
 <pre><code>## [1] 1.006056 1.459494 2.915835</code></pre>
-<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>x3 <span class="ot">&lt;-</span> x2[<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>]</span>
-<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>x1[<span class="sc">-</span><span class="dv">3</span>]</span></code></pre></div>
+<div class="sourceCode" id="cb57"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true" tabindex="-1"></a>x3 <span class="ot">&lt;-</span> x2[<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>]</span>
+<span id="cb57-2"><a href="#cb57-2" aria-hidden="true" tabindex="-1"></a>x1[<span class="sc">-</span><span class="dv">3</span>]</span></code></pre></div>
 <pre><code>## [1] -1.2070657  0.2774292 -2.3456977  0.4291247</code></pre>
 </section>
 <section id="interlude-missing-values" class="slide level2">
 <h2>Interlude: Missing Values</h2>
-<p>Variables in datasets sometimes include missing variables. In R, missing values are stored as <code>NA</code>. Vectors containing any data type can contain missing values. Functions deal with missing values differently, and sometimes require arguments to specify how to deal with missing values.</p>
-<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>vec <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">8</span>, <span class="cn">NA</span>, <span class="dv">7</span>, <span class="dv">3</span>)</span>
-<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(vec)</span></code></pre></div>
+<p>Real-world data often include missing values. In R, missing values are stored as <code>NA</code>. Vectors containing any data type can contain missing values. Functions deal with missing values differently, and sometimes require arguments to specify how to deal with missing values.</p>
+<div class="sourceCode" id="cb59"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb59-1"><a href="#cb59-1" aria-hidden="true" tabindex="-1"></a>vec <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">8</span>, <span class="cn">NA</span>, <span class="dv">7</span>, <span class="dv">3</span>)</span>
+<span id="cb59-2"><a href="#cb59-2" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(vec)</span></code></pre></div>
 <pre><code>## [1] NA</code></pre>
-<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(vec, <span class="at">na.rm=</span><span class="cn">TRUE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb61"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb61-1"><a href="#cb61-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(vec, <span class="at">na.rm=</span><span class="cn">TRUE</span>)</span></code></pre></div>
 <pre><code>## [1] 4.75</code></pre>
+<aside class="notes">
+<p>Ask students to calculate the mean in their exercises script.</p>
+</aside>
 </section>
 <section id="interlude-missing-values-1" class="slide level2">
 <h2>Interlude: Missing Values</h2>
 <p>You can check if a vector contains missing values by the function <code>is.na()</code>. Since this returns a logical vector, you can use <code>sum()</code> or <code>mean()</code> on the result to count the number or proportion of <code>TRUE</code> values.</p>
-<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="fu">is.na</span>(vec)</span></code></pre></div>
+<div class="sourceCode" id="cb63"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb63-1"><a href="#cb63-1" aria-hidden="true" tabindex="-1"></a><span class="fu">is.na</span>(vec)</span></code></pre></div>
 <pre><code>## [1] FALSE FALSE  TRUE FALSE FALSE</code></pre>
-<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(<span class="fu">is.na</span>(vec))</span></code></pre></div>
+<div class="sourceCode" id="cb65"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb65-1"><a href="#cb65-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(<span class="fu">is.na</span>(vec))</span></code></pre></div>
 <pre><code>## [1] 1</code></pre>
-<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(<span class="fu">is.na</span>(vec))</span></code></pre></div>
+<div class="sourceCode" id="cb67"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb67-1"><a href="#cb67-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(<span class="fu">is.na</span>(vec))</span></code></pre></div>
 <pre><code>## [1] 0.2</code></pre>
+<aside class="notes">
+<p>Ask students to calculate the number of mean values in their exercises script.</p>
+</aside>
 </section>
 <section id="factors" class="slide level2">
 <h2>Factors</h2>
@@ -727,7 +810,7 @@ Today, we will briefly review the above topics, and then turn to new material on
 <li class="fragment">Create factors with <code>factor()</code>, which includes an argument for <code>levels =</code></li>
 </ul>
 <aside class="notes">
-We won’t spend any more time reivewing factors today. If you need a refresher, check the lecture notes or review data camp. Each one tells you about factors from a different angle. The lecture notes focus on the utility of ordered factors, whereas data camp spends additional time on unordered factors.
+<p>We won’t spend any more time reviewing factors today. If you need a refresher, check the lecture notes.</p>
 </aside>
 </section>
 <section id="lists" class="slide level2">
@@ -739,39 +822,38 @@ We won’t spend any more time reivewing factors today. If you need a refresher,
 <li class="fragment">You can index an element in a list using double brackets: <code>[[1]]</code>. Single brackets will return the element as a list.</li>
 </ul>
 <aside class="notes">
-For more on lists, see the lecture notes or data camp.
+<p>For more on lists, see the lecture notes or data camp.</p>
 </aside>
 </section>
-<section id="matricies" class="slide level2">
-<h2>Matricies</h2>
+<section id="matrices" class="slide level2">
+<h2>Matrices</h2>
 <ul>
 <li class="fragment">Matrices in R are two-dimensional arrays.</li>
-<li class="fragment">Matrices are <em>homogenous</em>: all values of a matrix must be of the same data type.</li>
+<li class="fragment">Matrices are <em>homogeneous</em>: all values of a matrix must be of the same data type.</li>
 <li class="fragment">You can initialize a matrix using the <code>matrix()</code> function.</li>
-<li class="fragment">Matrices are used sparingly in R, primarly for numerical calculations or explicit matrix manipulation.</li>
+<li class="fragment">Matrices are used sparingly in R, primarily for numerical calculations or explicit matrix manipulation.</li>
 <li class="fragment">Matrices are indexed as follows: <code>mat[row no, col no]</code>.</li>
 </ul>
 <aside class="notes">
-There is an example matrix for you to practice with in the exercises file, but we won’t do it together.
+<p>There is an example matrix for you to practice with in the exercises file, but we won’t do it together.</p>
 </aside>
 </section>
 <section id="data-frames" class="slide level2">
 <h2>Data frames</h2>
 <ul>
 <li class="fragment">Data frames are the core data structure in R. A data frame is a list of named vectors with the same length.</li>
-<li class="fragment">Data frames are <em>heterogenous</em>: the vectors in a data frames can each be of a different data type.</li>
+<li class="fragment">Data frames are <em>heterogeneous</em>: the vectors in a data frames can each be of a different data type.</li>
 <li class="fragment">Columns are typically variables and rows are observations.</li>
 <li class="fragment">You can make make data frames with <code>data.frame()</code>, or by combining vectors with <code>cbind()</code> or <code>rbind()</code>.</li>
-<li class="fragment">Data frames can be indexed in the same way as matricies: <code>df[row no, col no]</code>.</li>
-<li class="fragment">Data frames can also be indexed by using variable/column names: <code>df$var</code> or <code>df["var"]</code>.</li>
+<li class="fragment">Data frames can be indexed in the same way as matrices: <code>df[row no, col no]</code>.</li>
+<li class="fragment">Data frames can also be indexed by using variable/column names: <code>df$var</code> or <code>df[["var"]]</code>.</li>
 </ul>
 </section>
 <section id="data-frames-exercise" class="slide level2">
 <h2>Data frames: exercise</h2>
 <ul>
 <li>Load the example data frame using the code provided</li>
-<li>Identify the number of observations (rows) and number of variables (columns)</li>
-<li>Identify the names of the variables</li>
+<li>Identify the number of observations (rows), number of variables (columns), and names of variables using <code>str()</code></li>
 <li>Select the variable <code>mpg</code></li>
 <li>Select the 4th row</li>
 <li>Square the value of the <code>cyl</code> variable and store this as a new variable <code>cylsq</code></li>
@@ -779,22 +861,25 @@ There is an example matrix for you to practice with in the exercises file, but w
 </section>
 <section id="data-frames-exercise-1" class="slide level2">
 <h2>Data frames: exercise</h2>
-<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dim</span>(mtcars) <span class="co"># str(mtcars) also okay here</span></span></code></pre></div>
-<pre><code>## [1] 32 11</code></pre>
-<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(mtcars)</span></code></pre></div>
-<pre><code>##  [1] &quot;mpg&quot;  &quot;cyl&quot;  &quot;disp&quot; &quot;hp&quot;   &quot;drat&quot; &quot;wt&quot;   &quot;qsec&quot; &quot;vs&quot;   &quot;am&quot;   &quot;gear&quot;
-## [11] &quot;carb&quot;</code></pre>
-<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a>mtcars<span class="sc">$</span>mpg</span></code></pre></div>
-<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a>mtcars[<span class="dv">4</span>,]</span></code></pre></div>
+<div class="sourceCode" id="cb69"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb69-1"><a href="#cb69-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(mtcars)</span></code></pre></div>
+<pre><code>## &#39;data.frame&#39;:    32 obs. of  11 variables:
+##  $ mpg : num  21 21 22.8 21.4 18.7 18.1 14.3 24.4 22.8 19.2 ...
+##  $ cyl : num  6 6 4 6 8 6 8 4 4 6 ...
+##  $ disp: num  160 160 108 258 360 ...
+##  $ hp  : num  110 110 93 110 175 105 245 62 95 123 ...
+##  $ drat: num  3.9 3.9 3.85 3.08 3.15 2.76 3.21 3.69 3.92 3.92 ...
+##  $ wt  : num  2.62 2.88 2.32 3.21 3.44 ...
+##  $ qsec: num  16.5 17 18.6 19.4 17 ...
+##  $ vs  : num  0 0 1 1 0 1 0 1 1 1 ...
+##  $ am  : num  1 1 1 0 0 0 0 0 0 0 ...
+##  $ gear: num  4 4 4 3 3 3 3 4 4 4 ...
+##  $ carb: num  4 4 1 1 2 1 4 2 2 4 ...</code></pre>
+<div class="sourceCode" id="cb71"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb71-1"><a href="#cb71-1" aria-hidden="true" tabindex="-1"></a>mtcars<span class="sc">$</span>mpg</span></code></pre></div>
+<div class="sourceCode" id="cb72"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb72-1"><a href="#cb72-1" aria-hidden="true" tabindex="-1"></a>mtcars[<span class="dv">4</span>,]</span></code></pre></div>
 <pre><code>##                 mpg cyl disp  hp drat    wt  qsec vs am gear carb
 ## Hornet 4 Drive 21.4   6  258 110 3.08 3.215 19.44  1  0    3    1</code></pre>
-<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a>mtcars<span class="sc">$</span>cylsq <span class="ot">&lt;-</span> (mtcars<span class="sc">$</span>cyl)<span class="sc">^</span><span class="dv">2</span></span></code></pre></div>
+<div class="sourceCode" id="cb74"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb74-1"><a href="#cb74-1" aria-hidden="true" tabindex="-1"></a>mtcars<span class="sc">$</span>cylsq <span class="ot">&lt;-</span> (mtcars<span class="sc">$</span>cyl)<span class="sc">^</span><span class="dv">2</span></span></code></pre></div>
 </section></section>
-<section id="break" class="title-slide slide level1">
-<h1>Break!</h1>
-<p>Let’s take a break and return to learn two new skills: <strong>reading files</strong> and basic <strong>data manipulation</strong>.</p>
-</section>
-
 <section>
 <section id="reading-files" class="title-slide slide level1">
 <h1>Reading files</h1>
@@ -804,17 +889,17 @@ There is an example matrix for you to practice with in the exercises file, but w
 <h2>Working directories</h2>
 <p>The working directory is the folder where R scripts and projects look for files by default.</p>
 <p>You can go to the Files tab in the bottom right window in RStudio and find the directory you want. Then you can set it as a working directory with an option in the “More” menu. Or you can use the <code>setwd()</code> as follows:</p>
-<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="fu">setwd</span>(<span class="st">&quot;/nfs/home/krn5889/R sessions&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb75"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb75-1"><a href="#cb75-1" aria-hidden="true" tabindex="-1"></a><span class="fu">setwd</span>(<span class="st">&quot;/nfs/home/krn5889/R sessions&quot;</span>)</span></code></pre></div>
 <p>In the exercises script file, set your working directory now.</p>
 </section>
 <section id="reading-files-read.csv" class="slide level2">
 <h2>Reading files: read.csv()</h2>
-<div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a>gapminder <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;data/gapminder5.csv&quot;</span>, <span class="at">stringsAsFactors=</span><span class="cn">FALSE</span>)</span></code></pre></div>
-<div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a>gapminder <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="at">file =</span> <span class="st">&quot;data/gapminder5.csv&quot;</span>,</span>
-<span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a>                       <span class="at">sep =</span> <span class="st">&quot;,&quot;</span>,</span>
-<span id="cb49-3"><a href="#cb49-3" aria-hidden="true" tabindex="-1"></a>                       <span class="at">stringsAsFactors =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb76"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb76-1"><a href="#cb76-1" aria-hidden="true" tabindex="-1"></a>gapminder <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;data/gapminder5.csv&quot;</span>, <span class="at">stringsAsFactors=</span><span class="cn">FALSE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb77"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb77-1"><a href="#cb77-1" aria-hidden="true" tabindex="-1"></a>gapminder <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="at">file =</span> <span class="st">&quot;data/gapminder5.csv&quot;</span>,</span>
+<span id="cb77-2"><a href="#cb77-2" aria-hidden="true" tabindex="-1"></a>                       <span class="at">sep =</span> <span class="st">&quot;,&quot;</span>,</span>
+<span id="cb77-3"><a href="#cb77-3" aria-hidden="true" tabindex="-1"></a>                       <span class="at">stringsAsFactors =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
 <aside class="notes">
-The above code is what you will usually see and use. The below code breaks down what is going on inside.
+<p>The above code is what you will usually see and use. The below code breaks down what is going on inside.</p>
 </aside>
 </section>
 <section id="reading-files-exercise" class="slide level2">
@@ -822,24 +907,24 @@ The above code is what you will usually see and use. The below code breaks down 
 <ul>
 <li>Check your working directory with <code>getwd()</code>.</li>
 <li>Run the <code>read.csv()</code> code provided and see what happens in the Environment tab.</li>
-<li>Load the <code>readr</code> package. <br><small>(It as has already been installed on the system-level as part of <code>tidyverse</code>)</small></li>
+<li>Load the <code>readr</code> package. <br><small>(It as has already been installed as part of <code>tidyverse</code>)</small></li>
 <li>Use <code>read_csv()</code> to load the gapminder data. Read the message generated in the console.</li>
 </ul>
 </section>
 <section id="reading-files-exercise-1" class="slide level2">
 <h2>Reading files: exercise</h2>
-<div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="fu">getwd</span>()</span></code></pre></div>
-<pre><code>## [1] &quot;/Users/kumar/OneDrive - Northwestern University/Assistantships &amp; Jobs/MSiA/bootcamp-2021&quot;</code></pre>
-<div class="sourceCode" id="cb52"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
-<span id="cb52-2"><a href="#cb52-2" aria-hidden="true" tabindex="-1"></a>gapminder <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;data/gapminder5.csv&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb78"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb78-1"><a href="#cb78-1" aria-hidden="true" tabindex="-1"></a><span class="fu">getwd</span>()</span></code></pre></div>
+<pre><code>## [1] &quot;C:/Users/kumar/OneDrive - Northwestern University/Assistantships &amp; Jobs/MSiA/bootcamp-2021&quot;</code></pre>
+<div class="sourceCode" id="cb80"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb80-1"><a href="#cb80-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
+<span id="cb80-2"><a href="#cb80-2" aria-hidden="true" tabindex="-1"></a>gapminder <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;data/gapminder5.csv&quot;</span>)</span></code></pre></div>
 <pre><code>## Rows: 1704 Columns: 6</code></pre>
-<pre><code>## ── Column specification ────────────────────────────────────────────────────────
+<pre><code>## -- Column specification --------------------------------------------------------
 ## Delimiter: &quot;,&quot;
 ## chr (2): country, continent
 ## dbl (4): year, pop, lifeExp, gdpPercap</code></pre>
 <pre><code>## 
-## ℹ Use `spec()` to retrieve the full column specification for this data.
-## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+## i Use `spec()` to retrieve the full column specification for this data.
+## i Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
 </section>
 <section id="reading-files-1" class="slide level2">
 <h2>Reading files</h2>
@@ -857,9 +942,9 @@ The above code is what you will usually see and use. The below code breaks down 
 <section id="roadmap-for-the-rest-of-the-r-sessions" class="slide level2">
 <h2>Roadmap for the rest of the R sessions</h2>
 <ul>
-<li>Today we will learn how to do basic <strong>data manipulation</strong> and <strong>data visualization</strong> in base R</li>
-<li>Most commonly, you will do these tasks using specialized packages such as <code>tidyverse</code> or <code>data.table</code></li>
-<li>So why teach these skills in base R?
+<li><p>Today we will learn how to do basic <strong>data manipulation</strong> and <strong>data visualization</strong> in base R</p></li>
+<li><p>Most commonly, you will do these tasks using specialized packages such as <code>tidyverse</code> or <code>data.table</code></p></li>
+<li><p>So why teach these skills in base R?</p>
 <ul>
 <li>This helps you understand how R works</li>
 <li>Many packages rely on how these tasks work in base R</li>
@@ -875,17 +960,17 @@ The above code is what you will usually see and use. The below code breaks down 
 <section id="exploring-data-frames" class="slide level2">
 <h2>Exploring data frames</h2>
 <ul>
-<li class="fragment">Remember: you can view data frames in RStudio with <code>View()</code> and examine other characteristics with <code>str()</code>, <code>dim()</code>, <code>names()</code>, <code>nrow()</code>, and more.</li>
-<li class="fragment">When run on a data frame, <code>summary()</code> returns summary statistics for all variables.</li>
-<li class="fragment"><code>mean()</code>, <code>median()</code>, <code>var()</code>, <code>sd()</code>, and <code>quantile()</code> operate as expected.</li>
-<li class="fragment">Frequency tables are a simple and useful way to explore discrete/categorical variables in data frames
+<li class="fragment"><p>You can view data frames in RStudio with <code>View()</code> and examine other characteristics with <code>str()</code>, <code>dim()</code>, <code>names()</code>, <code>nrow()</code>, and more.</p></li>
+<li class="fragment"><p>When run on a data frame, <code>summary()</code> returns summary statistics for all variables.</p></li>
+<li class="fragment"><p><code>mean()</code>, <code>median()</code>, <code>var()</code>, <code>sd()</code>, and <code>quantile()</code> are useful functions for variables.</p></li>
+<li class="fragment"><p>Frequency tables are a simple and useful way to explore discrete/categorical variables in data frames</p>
 <ul>
 <li class="fragment"><code>table()</code> creates a frequency table of one or more variables</li>
 <li class="fragment"><code>prop.table()</code> can turn a frequency table into a proportion table</li>
 </ul></li>
 </ul>
 <aside class="notes">
-Notice that any data frames which have been read in or created, like all other objects, can be seen in the environment
+<p>Notice that any data frames which have been read in or created, like all other objects, can be seen in the environment</p>
 </aside>
 </section>
 <section id="exploring-data-frames-exercise" class="slide level2">
@@ -893,13 +978,13 @@ Notice that any data frames which have been read in or created, like all other o
 <ul>
 <li>Run <code>summary()</code> on the gapminder data</li>
 <li>Find the mean of the variable <code>pop</code></li>
-<li>Create a frequency table of the variable <code>year</code> <br><small>(Hint: use <code>table()</code>)</small></li>
-<li>Create a proportion table of the variable <code>continent</code> <br><small>(Hint: use <code>prop.table()</code>)</small></li>
+<li>Create a frequency table of the variable <code>year</code> using <code>table()</code></li>
+<li>Create a proportion table of the variable <code>continent</code> using <code>prop.table()</code> <br><small>(Hint: check the help file for <code>prop.table()</code> to see what the input should be)</small></li>
 </ul>
 </section>
 <section id="exploring-data-frames-exercise-1" class="slide level2">
 <h2>Exploring data frames: exercise</h2>
-<div class="sourceCode" id="cb56"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(gapminder)</span></code></pre></div>
+<div class="sourceCode" id="cb84"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb84-1"><a href="#cb84-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(gapminder)</span></code></pre></div>
 <pre><code>##    country               year           pop             continent        
 ##  Length:1704        Min.   :1952   Min.   :6.001e+04   Length:1704       
 ##  Class :character   1st Qu.:1966   1st Qu.:2.794e+06   Class :character  
@@ -917,13 +1002,13 @@ Notice that any data frames which have been read in or created, like all other o
 </section>
 <section id="exploring-data-frames-exercise-2" class="slide level2">
 <h2>Exploring data frames: exercise</h2>
-<div class="sourceCode" id="cb58"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(gapminder<span class="sc">$</span>pop)</span></code></pre></div>
+<div class="sourceCode" id="cb86"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb86-1"><a href="#cb86-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(gapminder<span class="sc">$</span>pop)</span></code></pre></div>
 <pre><code>## [1] 29601212</code></pre>
-<div class="sourceCode" id="cb60"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(gapminder<span class="sc">$</span>continent)</span></code></pre></div>
+<div class="sourceCode" id="cb88"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb88-1"><a href="#cb88-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(gapminder<span class="sc">$</span>year)</span></code></pre></div>
 <pre><code>## 
-##   Africa Americas     Asia   Europe  Oceania 
-##      624      300      396      360       24</code></pre>
-<div class="sourceCode" id="cb62"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb62-1"><a href="#cb62-1" aria-hidden="true" tabindex="-1"></a><span class="fu">prop.table</span>(<span class="fu">table</span>(gapminder<span class="sc">$</span>continent))</span></code></pre></div>
+## 1952 1957 1962 1967 1972 1977 1982 1987 1992 1997 2002 2007 
+##  142  142  142  142  142  142  142  142  142  142  142  142</code></pre>
+<div class="sourceCode" id="cb90"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb90-1"><a href="#cb90-1" aria-hidden="true" tabindex="-1"></a><span class="fu">prop.table</span>(<span class="fu">table</span>(gapminder<span class="sc">$</span>continent))</span></code></pre></div>
 <pre><code>## 
 ##     Africa   Americas       Asia     Europe    Oceania 
 ## 0.36619718 0.17605634 0.23239437 0.21126761 0.01408451</code></pre>
@@ -931,27 +1016,24 @@ Notice that any data frames which have been read in or created, like all other o
 <section id="subsetting" class="slide level2">
 <h2>Subsetting</h2>
 <ul>
-<li class="fragment">One of the benefits of R is that we can work with multiple data frames at the same time</li>
-<li class="fragment">We will often want to <em>subset</em> a data frame, i.e. work with a portion of the data frame</li>
-<li class="fragment">There are two common ways to subset a data frame in base R
+<li class="fragment"><p>One of the benefits of R is that we can work with multiple data frames at the same time</p></li>
+<li class="fragment"><p>We will often want to <em>subset</em> a data frame, i.e. work with a portion of the data frame</p></li>
+<li class="fragment"><p>There are two common ways to subset a data frame in base R</p>
 <ul>
-<li class="fragment">Index the data frame: <code>gapminder[gapminder$continent=="Asia",]</code></li>
+<li class="fragment">Index the data frame: <code>gapminder[gapminder$continent=="Asia",]</code> (note the use of a logical statement and the comma)</li>
 <li class="fragment">Use the <code>subset()</code> function: <code>subset(gapminder, subset=continent=="Asia")</code></li>
 </ul></li>
 </ul>
-<aside class="notes">
-The most obvious use case of subsetting is to create and store smaller data frame, which we will do shortly. But think also about how useful it is to quickly subset a data frame: we can use subsets as inputs for statistical models, for example.
-</aside>
 </section>
 <section id="sorting" class="slide level2">
 <h2>Sorting</h2>
 <ul>
-<li class="fragment">The <code>sort()</code> function reorders elements, in ascending order by default.
+<li class="fragment"><p>The <code>sort()</code> function reorders elements, in ascending order by default.</p>
 <ul>
 <li class="fragment">You can flip the order by using the <code>decreasing = TRUE</code> argument.</li>
 </ul></li>
-<li class="fragment">The <code>order()</code> function gives you the index positions in sorted order.</li>
-<li class="fragment"><code>sort()</code> is useful for quickly viewing vectors; <code>order()</code> is useful for arranging data frames.</li>
+<li class="fragment"><p>The <code>order()</code> function gives you the index positions in sorted order.</p></li>
+<li class="fragment"><p><code>sort()</code> is useful for quickly viewing vectors; <code>order()</code> is useful for arranging data frames.</p></li>
 </ul>
 </section>
 <section id="subsetting-and-sorting-exercise" class="slide level2">
@@ -965,15 +1047,15 @@ The most obvious use case of subsetting is to create and store smaller data fram
 </section>
 <section id="subsetting-and-sorting-exercise-1" class="slide level2">
 <h2>Subsetting and Sorting: exercise</h2>
-<div class="sourceCode" id="cb64"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb64-1"><a href="#cb64-1" aria-hidden="true" tabindex="-1"></a>gapminder07 <span class="ot">&lt;-</span> <span class="fu">subset</span>(gapminder, <span class="at">subset =</span> year<span class="sc">==</span><span class="dv">2007</span>)</span>
-<span id="cb64-2"><a href="#cb64-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sort</span>(<span class="fu">table</span>(gapminder07<span class="sc">$</span>continent))</span></code></pre></div>
+<div class="sourceCode" id="cb92"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb92-1"><a href="#cb92-1" aria-hidden="true" tabindex="-1"></a>gapminder07 <span class="ot">&lt;-</span> <span class="fu">subset</span>(gapminder, <span class="at">subset =</span> year<span class="sc">==</span><span class="dv">2007</span>)</span>
+<span id="cb92-2"><a href="#cb92-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sort</span>(<span class="fu">table</span>(gapminder07<span class="sc">$</span>continent))</span></code></pre></div>
 <pre><code>## 
 ##  Oceania Americas   Europe     Asia   Africa 
 ##        2       25       30       33       52</code></pre>
-<div class="sourceCode" id="cb66"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb66-1"><a href="#cb66-1" aria-hidden="true" tabindex="-1"></a>gapminder07<span class="sc">$</span>pop[gapminder07<span class="sc">$</span>country<span class="sc">==</span><span class="st">&quot;Mexico&quot;</span>]</span></code></pre></div>
+<div class="sourceCode" id="cb94"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb94-1"><a href="#cb94-1" aria-hidden="true" tabindex="-1"></a>gapminder07<span class="sc">$</span>pop[gapminder07<span class="sc">$</span>country<span class="sc">==</span><span class="st">&quot;Mexico&quot;</span>]</span></code></pre></div>
 <pre><code>## [1] 108700891</code></pre>
-<div class="sourceCode" id="cb68"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb68-1"><a href="#cb68-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(gapminder07[<span class="fu">order</span>(gapminder07<span class="sc">$</span>pop, <span class="at">decreasing=</span><span class="cn">TRUE</span>),])</span></code></pre></div>
-<pre><code>## # A tibble: 6 × 6
+<div class="sourceCode" id="cb96"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb96-1"><a href="#cb96-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(gapminder07[<span class="fu">order</span>(gapminder07<span class="sc">$</span>pop, <span class="at">decreasing=</span><span class="cn">TRUE</span>),])</span></code></pre></div>
+<pre><code>## # A tibble: 6 x 6
 ##   country        year        pop continent lifeExp gdpPercap
 ##   &lt;chr&gt;         &lt;dbl&gt;      &lt;dbl&gt; &lt;chr&gt;       &lt;dbl&gt;     &lt;dbl&gt;
 ## 1 China          2007 1318683096 Asia         73.0     4959.
@@ -983,26 +1065,26 @@ The most obvious use case of subsetting is to create and store smaller data fram
 ## 5 Brazil         2007  190010647 Americas     72.4     9066.
 ## 6 Pakistan       2007  169270617 Asia         65.5     2606.</code></pre>
 <aside class="notes">
-Don’t worry too much about the bonus question if you find it confusing. The package <code>dplyr</code>, which we will cover on Thursday, will offer other ways to do this kind of task which some of you may find more intuitive.
+<p>Don’t worry too much about the bonus question if you find it confusing. The package <code>dplyr</code>, which we will cover on Thursday, will offer other ways to do this kind of task which some of you may find more intuitive.</p>
 </aside>
 </section>
 <section id="adding-and-removing-columns" class="slide level2">
 <h2>Adding and removing columns</h2>
 <p>When cleaning or wrangling datasets in RStudio, we will often want to create new variables.</p>
 <p>Two ways to add a vector as a new variable in R:</p>
-<div class="sourceCode" id="cb70"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb70-1"><a href="#cb70-1" aria-hidden="true" tabindex="-1"></a>gapminder<span class="sc">$</span>newvar <span class="ot">&lt;-</span> newvar</span>
-<span id="cb70-2"><a href="#cb70-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb70-3"><a href="#cb70-3" aria-hidden="true" tabindex="-1"></a>gapminder <span class="ot">&lt;-</span> <span class="fu">cbind</span>(gapminder, newvar)</span></code></pre></div>
+<div class="sourceCode" id="cb98"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb98-1"><a href="#cb98-1" aria-hidden="true" tabindex="-1"></a>gapminder<span class="sc">$</span>newvar <span class="ot">&lt;-</span> newvar</span>
+<span id="cb98-2"><a href="#cb98-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb98-3"><a href="#cb98-3" aria-hidden="true" tabindex="-1"></a>gapminder <span class="ot">&lt;-</span> <span class="fu">cbind</span>(gapminder, newvar)</span></code></pre></div>
 <p>Removing columns is easy too:</p>
-<div class="sourceCode" id="cb71"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb71-1"><a href="#cb71-1" aria-hidden="true" tabindex="-1"></a>gapminder<span class="sc">$</span>newvar <span class="ot">&lt;-</span> <span class="cn">NULL</span></span>
-<span id="cb71-2"><a href="#cb71-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb71-3"><a href="#cb71-3" aria-hidden="true" tabindex="-1"></a>gapminder <span class="ot">&lt;-</span> gapminder[<span class="sc">-</span><span class="st">&quot;newvar&quot;</span>]</span></code></pre></div>
+<div class="sourceCode" id="cb99"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb99-1"><a href="#cb99-1" aria-hidden="true" tabindex="-1"></a>gapminder<span class="sc">$</span>newvar <span class="ot">&lt;-</span> <span class="cn">NULL</span></span>
+<span id="cb99-2"><a href="#cb99-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb99-3"><a href="#cb99-3" aria-hidden="true" tabindex="-1"></a>gapminder <span class="ot">&lt;-</span> gapminder[<span class="sc">-</span><span class="st">&quot;newvar&quot;</span>]</span></code></pre></div>
 </section>
 <section id="recoding-variables" class="slide level2">
 <h2>Recoding variables</h2>
 <ul>
-<li class="fragment">A common task when cleaning/wrangling data is recoding variables.</li>
-<li class="fragment">Think about what the recoded variable should look like &amp; then decide on an approach.
+<li class="fragment"><p>A common task when cleaning/wrangling data is recoding variables.</p></li>
+<li class="fragment"><p>Think about what the recoded variable should look like &amp; then decide on an approach.</p>
 <ul>
 <li class="fragment">Sometimes, a single function can accomplish the recoding task needed. The new vector can then be assigned to a new column in the data frame.</li>
 <li class="fragment">If no single function comes to mind, we can initialize a new variable in the data frame, and assign values using indexes and conditional statements.</li>
@@ -1022,13 +1104,26 @@ Don’t worry too much about the bonus question if you find it confusing. The pa
 </section>
 <section id="recoding-variables-exercise-1" class="slide level2">
 <h2>Recoding variables: exercise</h2>
-<div class="sourceCode" id="cb72"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb72-1"><a href="#cb72-1" aria-hidden="true" tabindex="-1"></a>gapminder07<span class="sc">$</span>lifeExp_round <span class="ot">&lt;-</span> <span class="fu">round</span>(gapminder07<span class="sc">$</span>lifeExp)</span>
-<span id="cb72-2"><a href="#cb72-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(gapminder07<span class="sc">$</span>lifeExp_round)</span></code></pre></div>
+<div class="sourceCode" id="cb100"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb100-1"><a href="#cb100-1" aria-hidden="true" tabindex="-1"></a>gapminder07<span class="sc">$</span>lifeExp_round <span class="ot">&lt;-</span> <span class="fu">round</span>(gapminder07<span class="sc">$</span>lifeExp)</span>
+<span id="cb100-2"><a href="#cb100-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(gapminder07<span class="sc">$</span>lifeExp_round)</span></code></pre></div>
 <pre><code>## [1] 44 76 72 43 75 81</code></pre>
-<div class="sourceCode" id="cb74"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb74-1"><a href="#cb74-1" aria-hidden="true" tabindex="-1"></a>gapminder07<span class="sc">$</span>lifeExp_highlow <span class="ot">&lt;-</span> <span class="cn">NA</span></span>
-<span id="cb74-2"><a href="#cb74-2" aria-hidden="true" tabindex="-1"></a>gapminder07<span class="sc">$</span>lifeExp_highlow[gapminder07<span class="sc">$</span>lifeExp<span class="sc">&gt;</span><span class="fu">mean</span>(gapminder07<span class="sc">$</span>lifeExp)] <span class="ot">&lt;-</span> <span class="st">&quot;High&quot;</span></span>
-<span id="cb74-3"><a href="#cb74-3" aria-hidden="true" tabindex="-1"></a>gapminder07<span class="sc">$</span>lifeExp_highlow[gapminder07<span class="sc">$</span>lifeExp<span class="sc">&lt;</span><span class="fu">mean</span>(gapminder07<span class="sc">$</span>lifeExp)] <span class="ot">&lt;-</span> <span class="st">&quot;Low&quot;</span></span>
-<span id="cb74-4"><a href="#cb74-4" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(gapminder07<span class="sc">$</span>lifeExp_highlow)</span></code></pre></div>
+</section>
+<section id="recoding-variables-exercise-2" class="slide level2">
+<h2>Recoding variables: exercise</h2>
+<div class="sourceCode" id="cb102"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb102-1"><a href="#cb102-1" aria-hidden="true" tabindex="-1"></a>gapminder07<span class="sc">$</span>lifeExp_over70 <span class="ot">&lt;-</span> <span class="cn">NA</span>  <span class="co"># Initialize a variable containing all &quot;NA&quot; values</span></span>
+<span id="cb102-2"><a href="#cb102-2" aria-hidden="true" tabindex="-1"></a>gapminder07<span class="sc">$</span>lifeExp_over70[gapminder07<span class="sc">$</span>lifeExp<span class="sc">&gt;</span><span class="dv">70</span>] <span class="ot">&lt;-</span> <span class="st">&quot;Yes&quot;</span></span>
+<span id="cb102-3"><a href="#cb102-3" aria-hidden="true" tabindex="-1"></a>gapminder07<span class="sc">$</span>lifeExp_over70[gapminder07<span class="sc">$</span>lifeExp<span class="sc">&lt;</span><span class="dv">70</span>] <span class="ot">&lt;-</span> <span class="st">&quot;No&quot;</span></span>
+<span id="cb102-4"><a href="#cb102-4" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(gapminder07<span class="sc">$</span>lifeExp_over70)</span></code></pre></div>
+<pre><code>## 
+##  No Yes 
+##  59  83</code></pre>
+</section>
+<section id="recoding-variables-exercise-3" class="slide level2">
+<h2>Recoding variables: exercise</h2>
+<div class="sourceCode" id="cb104"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb104-1"><a href="#cb104-1" aria-hidden="true" tabindex="-1"></a>gapminder07<span class="sc">$</span>lifeExp_highlow <span class="ot">&lt;-</span> <span class="cn">NA</span></span>
+<span id="cb104-2"><a href="#cb104-2" aria-hidden="true" tabindex="-1"></a>gapminder07<span class="sc">$</span>lifeExp_highlow[gapminder07<span class="sc">$</span>lifeExp<span class="sc">&gt;</span><span class="fu">mean</span>(gapminder07<span class="sc">$</span>lifeExp)] <span class="ot">&lt;-</span> <span class="st">&quot;High&quot;</span></span>
+<span id="cb104-3"><a href="#cb104-3" aria-hidden="true" tabindex="-1"></a>gapminder07<span class="sc">$</span>lifeExp_highlow[gapminder07<span class="sc">$</span>lifeExp<span class="sc">&lt;</span><span class="fu">mean</span>(gapminder07<span class="sc">$</span>lifeExp)] <span class="ot">&lt;-</span> <span class="st">&quot;Low&quot;</span></span>
+<span id="cb104-4"><a href="#cb104-4" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(gapminder07<span class="sc">$</span>lifeExp_highlow)</span></code></pre></div>
 <pre><code>## 
 ## High  Low 
 ##   85   57</code></pre>
@@ -1036,25 +1131,25 @@ Don’t worry too much about the bonus question if you find it confusing. The pa
 <section id="aggregating" class="slide level2">
 <h2>Aggregating</h2>
 <ul>
-<li class="fragment">Notice that the observations (i.e. rows) in our data frame are grouped; specifically, each country is grouped into a continent.</li>
-<li class="fragment">We are often interested in summary statistics by groups.</li>
-<li class="fragment">The <code>aggregate()</code> function accomplishes this: <code>aggregate(y ~ x, FUN = mean)</code> gives the mean of vector <code>y</code> for each unique group in <code>x</code>.
+<li class="fragment"><p>Notice that the observations (i.e. rows) in our data frame are grouped; specifically, each country is grouped into a continent.</p></li>
+<li class="fragment"><p>We are often interested in summary statistics by groups.</p></li>
+<li class="fragment"><p>The <code>aggregate()</code> function accomplishes this: <code>aggregate(y ~ x, FUN = mean)</code> gives the mean of vector <code>y</code> for each unique group in <code>x</code>.</p>
 <ul>
 <li class="fragment"><code>mean</code> can be replaced by other functions here, such as <code>median</code>.</li>
 </ul></li>
-<li class="fragment"><strong>Try it</strong>! In the exercise file, find the mean of life expectancy in 2007 for each continent.</li>
+<li class="fragment"><p><strong>Try it</strong>! In the exercise file, find the mean of life expectancy in 2007 for each continent.</p></li>
 </ul>
 </section>
 <section id="aggregating-exercise" class="slide level2">
 <h2>Aggregating: exercise</h2>
-<div class="sourceCode" id="cb76"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb76-1"><a href="#cb76-1" aria-hidden="true" tabindex="-1"></a><span class="fu">aggregate</span>(gapminder07<span class="sc">$</span>lifeExp <span class="sc">~</span> gapminder07<span class="sc">$</span>continent, <span class="at">FUN =</span> mean)</span></code></pre></div>
+<div class="sourceCode" id="cb106"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb106-1"><a href="#cb106-1" aria-hidden="true" tabindex="-1"></a><span class="fu">aggregate</span>(gapminder07<span class="sc">$</span>lifeExp <span class="sc">~</span> gapminder07<span class="sc">$</span>continent, <span class="at">FUN =</span> mean)</span></code></pre></div>
 <pre><code>##   gapminder07$continent gapminder07$lifeExp
 ## 1                Africa            54.80604
 ## 2              Americas            73.60812
 ## 3                  Asia            70.72848
 ## 4                Europe            77.64860
 ## 5               Oceania            80.71950</code></pre>
-<div class="sourceCode" id="cb78"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb78-1"><a href="#cb78-1" aria-hidden="true" tabindex="-1"></a><span class="fu">aggregate</span>(lifeExp <span class="sc">~</span> continent, <span class="at">data =</span> gapminder07, <span class="at">FUN =</span> mean)</span></code></pre></div>
+<div class="sourceCode" id="cb108"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb108-1"><a href="#cb108-1" aria-hidden="true" tabindex="-1"></a><span class="fu">aggregate</span>(lifeExp <span class="sc">~</span> continent, <span class="at">data =</span> gapminder07, <span class="at">FUN =</span> mean)</span></code></pre></div>
 <pre><code>##   continent  lifeExp
 ## 1    Africa 54.80604
 ## 2  Americas 73.60812
@@ -1065,13 +1160,13 @@ Don’t worry too much about the bonus question if you find it confusing. The pa
 <section id="statistics" class="slide level2">
 <h2>Statistics</h2>
 <ul>
-<li class="fragment">Here are some easy statistical analyses to conduct in R
+<li class="fragment"><p>Here are some easy statistical analyses to conduct in R</p>
 <ul>
 <li class="fragment">Correlations: <code>cor()</code>; Covariance: <code>cov()</code></li>
 <li class="fragment">T-tests: <code>t.test(var1 ~ var2)</code>, where <code>var2</code> is the grouping variable</li>
 <li class="fragment">Linear regression: <code>lm(y ~ x1 + x2, data = df)</code></li>
 </ul></li>
-<li class="fragment">You can store the results of these functions in objects, which is especially useful for statistical models with many components.</li>
+<li class="fragment"><p>You can store the results of these functions in objects, which is especially useful for statistical models with many components.</p></li>
 </ul>
 </section>
 <section id="statistics-exercise" class="slide level2">
@@ -1080,16 +1175,16 @@ Don’t worry too much about the bonus question if you find it confusing. The pa
 <p><small>You’re using some new functions, so refer to help files whenever you get stuck.</small></p>
 <ul>
 <li>Calculate the correlation between <code>lifeExp</code> and <code>gdpPercap</code>.</li>
-<li>Use a t-test to evaluate the difference between <code>gdpPercap</code> in “high” and “low” life expectancy countries. Store the results as <code>t1</code>, and then print out <code>t1</code>.</li>
+<li>Use a t-test to evaluate the difference in <code>gdpPercap</code> between “high” and “low” life expectancy countries. Store the results as <code>t1</code>, and then print out <code>t1</code>.</li>
 </ul>
 </section>
 <section id="statistics-exercise-1" class="slide level2">
 <h2>Statistics: exercise</h2>
-<div class="sourceCode" id="cb80"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb80-1"><a href="#cb80-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cor</span>(gapminder07<span class="sc">$</span>lifeExp, gapminder07<span class="sc">$</span>gdpPercap)</span></code></pre></div>
+<div class="sourceCode" id="cb110"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb110-1"><a href="#cb110-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cor</span>(gapminder07<span class="sc">$</span>lifeExp, gapminder07<span class="sc">$</span>gdpPercap)</span></code></pre></div>
 <pre><code>## [1] 0.6786624</code></pre>
-<div class="sourceCode" id="cb82"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb82-1"><a href="#cb82-1" aria-hidden="true" tabindex="-1"></a>t1 <span class="ot">&lt;-</span> <span class="fu">t.test</span>(gapminder07<span class="sc">$</span>gdpPercap<span class="sc">~</span>gapminder07<span class="sc">$</span>lifeExp_highlow)</span>
-<span id="cb82-2"><a href="#cb82-2" aria-hidden="true" tabindex="-1"></a>t1 <span class="ot">&lt;-</span> <span class="fu">t.test</span>(gdpPercap<span class="sc">~</span>lifeExp_highlow, <span class="at">data=</span>gapminder07)</span>
-<span id="cb82-3"><a href="#cb82-3" aria-hidden="true" tabindex="-1"></a>t1</span></code></pre></div>
+<div class="sourceCode" id="cb112"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb112-1"><a href="#cb112-1" aria-hidden="true" tabindex="-1"></a>t1 <span class="ot">&lt;-</span> <span class="fu">t.test</span>(gapminder07<span class="sc">$</span>gdpPercap<span class="sc">~</span>gapminder07<span class="sc">$</span>lifeExp_highlow)</span>
+<span id="cb112-2"><a href="#cb112-2" aria-hidden="true" tabindex="-1"></a>t1 <span class="ot">&lt;-</span> <span class="fu">t.test</span>(gdpPercap<span class="sc">~</span>lifeExp_highlow, <span class="at">data=</span>gapminder07)</span>
+<span id="cb112-3"><a href="#cb112-3" aria-hidden="true" tabindex="-1"></a>t1</span></code></pre></div>
 <pre><code>## 
 ##  Welch Two Sample t-test
 ## 
@@ -1106,19 +1201,19 @@ Don’t worry too much about the bonus question if you find it confusing. The pa
 <section id="statistics-exercise-2" class="slide level2">
 <h2>Statistics: exercise</h2>
 <ul>
-<li>Conduct a linear regression using <code>lm()</code> which predicts <code>lifeExp</code> as a function of <code>gdpPercap</code> and <code>pop</code>. Store the results as <code>reg1</code>.
+<li><p>Conduct a linear regression using <code>lm()</code> which predicts <code>lifeExp</code> as a function of <code>gdpPercap</code> and <code>pop</code>. Store the results as <code>reg1</code>.</p>
 <ul>
 <li>You can define all the variables using the <code>df$var</code> syntax, or you can just use variable names and identify the data frame in the <code>data =</code> argument.</li>
 <li>Examples are shown at the bottom of the help file for <code>lm()</code></li>
 </ul></li>
-<li>Print out <code>reg1</code>.</li>
-<li>Run <code>summary()</code> on <code>reg1</code>.</li>
+<li><p>Print out <code>reg1</code>.</p></li>
+<li><p>Run <code>summary()</code> on <code>reg1</code>.</p></li>
 </ul>
 </section>
 <section id="statistics-exercise-3" class="slide level2">
 <h2>Statistics: exercise</h2>
-<div class="sourceCode" id="cb84"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb84-1"><a href="#cb84-1" aria-hidden="true" tabindex="-1"></a>reg1 <span class="ot">&lt;-</span> <span class="fu">lm</span>(lifeExp <span class="sc">~</span> gdpPercap <span class="sc">+</span> pop, <span class="at">data =</span> gapminder07)</span>
-<span id="cb84-2"><a href="#cb84-2" aria-hidden="true" tabindex="-1"></a>reg1</span></code></pre></div>
+<div class="sourceCode" id="cb114"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb114-1"><a href="#cb114-1" aria-hidden="true" tabindex="-1"></a>reg1 <span class="ot">&lt;-</span> <span class="fu">lm</span>(lifeExp <span class="sc">~</span> gdpPercap <span class="sc">+</span> pop, <span class="at">data =</span> gapminder07)</span>
+<span id="cb114-2"><a href="#cb114-2" aria-hidden="true" tabindex="-1"></a>reg1</span></code></pre></div>
 <pre><code>## 
 ## Call:
 ## lm(formula = lifeExp ~ gdpPercap + pop, data = gapminder07)
@@ -1126,7 +1221,7 @@ Don’t worry too much about the bonus question if you find it confusing. The pa
 ## Coefficients:
 ## (Intercept)    gdpPercap          pop  
 ##   5.921e+01    6.416e-04    7.001e-09</code></pre>
-<div class="sourceCode" id="cb86"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb86-1"><a href="#cb86-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(reg1)</span></code></pre></div>
+<div class="sourceCode" id="cb116"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb116-1"><a href="#cb116-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(reg1)</span></code></pre></div>
 <pre><code>## 
 ## Call:
 ## lm(formula = lifeExp ~ gdpPercap + pop, data = gapminder07)
@@ -1155,25 +1250,30 @@ Don’t worry too much about the bonus question if you find it confusing. The pa
 <section id="writing-a-data-file" class="slide level2">
 <h2>Writing a data file</h2>
 <ul>
-<li class="fragment">We will often want to save the data frames as data files after cleaning/wrangling/etc.</li>
-<li class="fragment">You can use <code>write.csv()</code> from base R or <code>write_csv()</code> from <code>readr</code> to do this.</li>
-<li class="fragment"><strong>Try it!</strong> Save the data frame <code>gapminder07</code> to the “data” subfolder in your working directory using the <code>write.csv</code> function. Set the argument <code>row.names = FALSE</code>.</li>
+<li class="fragment"><p>We will often want to save the data frames as data files after cleaning/wrangling/etc.</p></li>
+<li class="fragment"><p>You can use <code>write.csv()</code> from base R or <code>write_csv()</code> from <code>readr</code> to do this.</p></li>
+<li class="fragment"><p><strong>Try it!</strong> Save the data frame <code>gapminder07</code> in the same directory that <code>gapminder5.csv</code> is located.</p>
+<ul>
+<li class="fragment"><p>If you use <code>write.csv()</code> , set the argument <code>row.names = FALSE</code></p></li>
+<li class="fragment"><p>If you use <code>write_csv()</code>, it does not include row names/numbers by default</p></li>
+</ul></li>
 </ul>
 </section>
 <section id="writing-a-data-file-exercise" class="slide level2">
 <h2>Writing a data file: exercise</h2>
-<div class="sourceCode" id="cb88"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb88-1"><a href="#cb88-1" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(gapminder07, <span class="at">file =</span> <span class="st">&quot;data/gapminder07.csv&quot;</span>, <span class="at">row.names =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb118"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb118-1"><a href="#cb118-1" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(gapminder07, <span class="at">file=</span><span class="st">&quot;data/gapminder07.csv&quot;</span>, <span class="at">row.names=</span><span class="cn">FALSE</span>)</span>
+<span id="cb118-2"><a href="#cb118-2" aria-hidden="true" tabindex="-1"></a><span class="fu">write_csv</span>(gapminder07, <span class="at">file=</span><span class="st">&quot;data/gapminder07.csv&quot;</span>)</span></code></pre></div>
 </section>
 <section id="save-r-objects" class="slide level2">
 <h2>Save R objects</h2>
 <ul>
-<li class="fragment">You can save all objects in your workspace using <code>save.image()</code> or by clicking the “Save” icon in the Environment tab.
+<li class="fragment"><p>You can save all objects in your workspace using <code>save.image()</code> or by clicking the “Save” icon in the Environment tab.</p>
 <ul>
 <li class="fragment">You can load all objects back in using <code>load.image()</code> or opening the <code>.RData</code> file that is created.</li>
 <li class="fragment">You can save specific objects in an <code>.RData</code> file with the <code>save()</code> function.</li>
 </ul></li>
-<li class="fragment">If your script file is well-written, you should be able to retrieve all your objects just by running your code again.</li>
-<li class="fragment">If you have a project with code that takes a long time to run, I would recommend using project files.</li>
+<li class="fragment"><p>If your script file is well-written, you should be able to retrieve all your objects just by running your code again.</p></li>
+<li class="fragment"><p>If you have a project with code that takes a long time to run, I would recommend using project files.</p></li>
 </ul>
 </section></section>
 <section>
@@ -1184,8 +1284,8 @@ Don’t worry too much about the bonus question if you find it confusing. The pa
 <section id="base-r-vs.-ggplot2" class="slide level2">
 <h2>Base R vs. ggplot2</h2>
 <ul>
-<li class="fragment">We will only cover visualization briefly today, using some functions included in base R. Data scientists generally use other packages for data visualization, especially <code>ggplot2</code>, which we will cover on Day 3.</li>
-<li class="fragment">So why learn data visualization in base R?
+<li class="fragment"><p>We will only cover visualization briefly today, using some functions included in base R. Data scientists generally use other packages for data visualization, especially <code>ggplot2</code>, which we will cover on Day 3.</p></li>
+<li class="fragment"><p>So why learn data visualization in base R?</p>
 <ul>
 <li class="fragment">Some of the simple functions are useful ways to explore data while doing analysis.</li>
 <li class="fragment">The syntax of visualization in base R is often adopted by other packages.</li>
@@ -1195,8 +1295,8 @@ Don’t worry too much about the bonus question if you find it confusing. The pa
 <section id="histograms" class="slide level2">
 <h2>Histograms</h2>
 <ul>
-<li class="fragment">Histograms are a useful way to examine the distribution of a single variable. The base R function for histograms is simple: <code>hist()</code>.</li>
-<li class="fragment"><strong>Try it!</strong> Create a histogram of the variable <code>lifeExp</code> in <code>gapminder07</code>.
+<li class="fragment"><p>Histograms are a useful way to examine the distribution of a single variable. The base R function for histograms is simple: <code>hist()</code>.</p></li>
+<li class="fragment"><p><strong>Try it!</strong> Create a histogram of the variable <code>lifeExp</code> in <code>gapminder07</code>.</p>
 <ul>
 <li class="fragment">When you’re done, look at the help file and try to re-create the histogram, this time with a title and axis labels.</li>
 <li class="fragment">Bonus: Change the <code>breaks =</code> argument from its default setting and see what happens.</li>
@@ -1205,9 +1305,9 @@ Don’t worry too much about the bonus question if you find it confusing. The pa
 </section>
 <section id="histograms-exercise" class="slide level2">
 <h2>Histograms: exercise</h2>
-<div class="sourceCode" id="cb89"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb89-1"><a href="#cb89-1" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(gapminder07<span class="sc">$</span>lifeExp, </span>
-<span id="cb89-2"><a href="#cb89-2" aria-hidden="true" tabindex="-1"></a>     <span class="at">main=</span><span class="st">&quot;Distribution of life expectancy across countries in 2007&quot;</span>, </span>
-<span id="cb89-3"><a href="#cb89-3" aria-hidden="true" tabindex="-1"></a>     <span class="at">xlab=</span><span class="st">&quot;Life expectancy&quot;</span>, <span class="at">ylab=</span><span class="st">&quot;Frequency&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb119"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb119-1"><a href="#cb119-1" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(gapminder07<span class="sc">$</span>lifeExp, </span>
+<span id="cb119-2"><a href="#cb119-2" aria-hidden="true" tabindex="-1"></a>     <span class="at">main=</span><span class="st">&quot;Distribution of life expectancy across countries in 2007&quot;</span>, </span>
+<span id="cb119-3"><a href="#cb119-3" aria-hidden="true" tabindex="-1"></a>     <span class="at">xlab=</span><span class="st">&quot;Life expectancy&quot;</span>, <span class="at">ylab=</span><span class="st">&quot;Frequency&quot;</span>)</span></code></pre></div>
 <p><img src="R1-R2_slides_files/figure-revealjs/histograms-1.png" width="768" /></p>
 </section>
 <section id="scatterplots" class="slide level2">
@@ -1228,22 +1328,22 @@ Don’t worry too much about the bonus question if you find it confusing. The pa
 </section>
 <section id="scatterplots-exercise-1" class="slide level2">
 <h2>Scatterplots: exercise</h2>
-<div class="sourceCode" id="cb90"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb90-1"><a href="#cb90-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(gapminder07<span class="sc">$</span>lifeExp <span class="sc">~</span> gapminder07<span class="sc">$</span>gdpPercap)</span></code></pre></div>
+<div class="sourceCode" id="cb120"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb120-1"><a href="#cb120-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(gapminder07<span class="sc">$</span>lifeExp <span class="sc">~</span> gapminder07<span class="sc">$</span>gdpPercap)</span></code></pre></div>
 <p><img src="R1-R2_slides_files/figure-revealjs/scatterplot%201-1.png" width="768" /></p>
 </section>
 <section id="scatterplots-exercise-2" class="slide level2">
 <h2>Scatterplots: exercise</h2>
-<div class="sourceCode" id="cb91"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb91-1"><a href="#cb91-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(gapminder07<span class="sc">$</span>lifeExp <span class="sc">~</span> gapminder07<span class="sc">$</span>gdpPercap,</span>
-<span id="cb91-2"><a href="#cb91-2" aria-hidden="true" tabindex="-1"></a>     <span class="at">main=</span><span class="st">&quot;Relationship between life expectancy and GDP per capita in 2007&quot;</span>, </span>
-<span id="cb91-3"><a href="#cb91-3" aria-hidden="true" tabindex="-1"></a>     <span class="at">ylab=</span><span class="st">&quot;Life expectancy&quot;</span>, <span class="at">xlab=</span><span class="st">&quot;GDP per capita&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb121"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb121-1"><a href="#cb121-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(gapminder07<span class="sc">$</span>lifeExp <span class="sc">~</span> gapminder07<span class="sc">$</span>gdpPercap,</span>
+<span id="cb121-2"><a href="#cb121-2" aria-hidden="true" tabindex="-1"></a>     <span class="at">main=</span><span class="st">&quot;Relationship between life expectancy and GDP per capita in 2007&quot;</span>, </span>
+<span id="cb121-3"><a href="#cb121-3" aria-hidden="true" tabindex="-1"></a>     <span class="at">ylab=</span><span class="st">&quot;Life expectancy&quot;</span>, <span class="at">xlab=</span><span class="st">&quot;GDP per capita&quot;</span>)</span></code></pre></div>
 <p><img src="R1-R2_slides_files/figure-revealjs/scatterplot%202-1.png" width="768" /></p>
 </section>
 <section id="scatterplots-exercise-3" class="slide level2">
 <h2>Scatterplots: exercise</h2>
-<div class="sourceCode" id="cb92"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb92-1"><a href="#cb92-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(gapminder07<span class="sc">$</span>lifeExp <span class="sc">~</span> gapminder07<span class="sc">$</span>gdpPercap,</span>
-<span id="cb92-2"><a href="#cb92-2" aria-hidden="true" tabindex="-1"></a>     <span class="at">main=</span><span class="st">&quot;Relationship between life expectancy and GDP per capita in 2007&quot;</span>, </span>
-<span id="cb92-3"><a href="#cb92-3" aria-hidden="true" tabindex="-1"></a>     <span class="at">ylab=</span><span class="st">&quot;Life expectancy&quot;</span>, <span class="at">xlab=</span><span class="st">&quot;GDP per capita&quot;</span>)</span>
-<span id="cb92-4"><a href="#cb92-4" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h =</span> <span class="fu">mean</span>(gapminder07<span class="sc">$</span>lifeExp))</span></code></pre></div>
+<div class="sourceCode" id="cb122"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb122-1"><a href="#cb122-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(gapminder07<span class="sc">$</span>lifeExp <span class="sc">~</span> gapminder07<span class="sc">$</span>gdpPercap,</span>
+<span id="cb122-2"><a href="#cb122-2" aria-hidden="true" tabindex="-1"></a>     <span class="at">main=</span><span class="st">&quot;Relationship between life expectancy and GDP per capita in 2007&quot;</span>, </span>
+<span id="cb122-3"><a href="#cb122-3" aria-hidden="true" tabindex="-1"></a>     <span class="at">ylab=</span><span class="st">&quot;Life expectancy&quot;</span>, <span class="at">xlab=</span><span class="st">&quot;GDP per capita&quot;</span>)</span>
+<span id="cb122-4"><a href="#cb122-4" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h =</span> <span class="fu">mean</span>(gapminder07<span class="sc">$</span>lifeExp))</span></code></pre></div>
 <p><img src="R1-R2_slides_files/figure-revealjs/scatterplot%203-1.png" width="768" /></p>
 </section></section>
 <section id="the-end" class="title-slide slide level1">
