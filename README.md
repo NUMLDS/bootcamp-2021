@@ -1,19 +1,29 @@
 # 2021 MSiA boot camp
 
-This Github repository contains materials for the R sessions of the 2019 Masters of Science in Analytics program boot camp, including lecture notes, slides, exercises, and recommended resources as you continue to develop your skills. 
+This Github repository contains materials for the R sessions of the 2019 Masters of Science in Analytics program boot camp, including lecture notes, slides, exercises, and recommended resources as you continue to develop your skills.
 
 ## Workshop materials
 
-|Session|Content|Lecture notes|Slides|Exercises|
-|-------|-------|-------------|------|---------|
-|R1 & R2<br />Mon, 9/13|Basic syntax and data structures; Reading and writing files; Data manipulation and visualization in base R|[Lecture notes](https://msia.github.io/bootcamp-2021/lecturenotes/R1-R2_lecturenotes)|[Slides](https://msia.github.io/bootcamp-2021/lectureslides/R1-R2_slides)|[Exercises](https://github.com/MSIA/bootcamp-2021/blob/master/exercises/R1-R2_exercises.R) and [Answers](https://github.com/MSIA/bootcamp-2021/blob/master/exercises/R1-R2_exercises_with_answers.R)|
-|R3 & R4<br />Wed, 9/15|RMarkdown; Loops, conditionals, and functions; R and Github|[Lecture notes](https://msia.github.io/bootcamp-2021/lecturenotes/R3-R4_lecturenotes)|[Slides](https://msia.github.io/bootcamp-2021/lectureslides/R3-R4_slides)|[Exercises](https://msia.github.io/bootcamp-2021/exercises/R3-R4_exercises_no_answers.html) and [Answers](https://msia.github.io/bootcamp-2021/exercises/R3-R4_exercises_with_answers.html)|
-|R5 & R6<br />Thu, 9/16|Advanced manipulation: reshaping, merging, dplyr, and data.table|[Lecture notes, pt 1](https://msia.github.io/bootcamp-2021/lecturenotes/R5_lecturenotes)<br />[Lecture notes, pt 2](https://msia.github.io/bootcamp-2021/lecturenotes/R6_lecturenotes)|[Slides, pt 1](https://msia.github.io/bootcamp-2021/lectureslides/R5_slides)<br />[Slides, pt 2](https://msia.github.io/bootcamp-2021/lectureslides/R6_slides)|[Exercises](https://msia.github.io/bootcamp-2021/exercises/R5-R6_exercises_no_answers.html) and [Answers](https://msia.github.io/bootcamp-2021/exercises/R5-R6_exercises_with_answers.html)|
-|R7 & R8<br />Mon, 9/20|Data visualization with ggplot|[Lecture notes](https://msia.github.io/bootcamp-2021/lecturenotes/R7_lecturenotes)|[Slides](https://msia.github.io/bootcamp-2021/lectureslides/R7_slides)|[Exercises](https://msia.github.io/bootcamp-2021/exercises/R7_exercises.md)|
+[Click here for a ZIP file containing Day 1 materials only](https://github.com/kumarhk/bootcamp-2021/raw/master/day1_only.zipAd).
 
-Instructions for the final exercise on 9/20 can be found [here](https://github.com/MSIA/bootcamp-2021/blob/master/exercises/R8_final-exercise-instructions.md).
+| Date      | Session | Content                                                                                                    | Lecture notes                                                                                                                                                                          | Slides                                                                                                                                                         | Exercises                                                                                                                                                                                            |
+|-----------|---------|------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Mon, 9/13 | R1 & R2 | Basic syntax and data structures; Reading and writing files; Data manipulation and visualization in base R | [Lecture notes](https://msia.github.io/bootcamp-2021/lecturenotes/R1-R2_lecturenotes)                                                                                                  | [Slides](https://msia.github.io/bootcamp-2021/lectureslides/R1-R2_slides)                                                                                      | [Exercises](https://github.com/MSIA/bootcamp-2021/blob/master/exercises/R1-R2_exercises.R) and [Answers](https://github.com/MSIA/bootcamp-2021/blob/master/exercises/R1-R2_exercises_with_answers.R) |
+| Wed, 9/15 | R3 & R4 | RMarkdown; Loops, conditionals, and functions; R and Github                                                | [Lecture notes](https://msia.github.io/bootcamp-2021/lecturenotes/R3-R4_lecturenotes)                                                                                                  | [Slides](https://msia.github.io/bootcamp-2021/lectureslides/R3-R4_slides)                                                                                      | [Exercises](https://msia.github.io/bootcamp-2021/exercises/R3-R4_exercises_no_answers.html) and [Answers](https://msia.github.io/bootcamp-2021/exercises/R3-R4_exercises_with_answers.html)          |
+| Thu, 9/16 | R5 & R6 | Advanced manipulation: reshaping, merging, dplyr, and data.table                                           | [Lecture notes, pt 1](https://msia.github.io/bootcamp-2021/lecturenotes/R5_lecturenotes)<br />[Lecture notes, pt 2](https://msia.github.io/bootcamp-2021/lecturenotes/R6_lecturenotes) | [Slides, pt 1](https://msia.github.io/bootcamp-2021/lectureslides/R5_slides)<br />[Slides, pt 2](https://msia.github.io/bootcamp-2021/lectureslides/R6_slides) | [Exercises](https://msia.github.io/bootcamp-2021/exercises/R5-R6_exercises_no_answers.html) and [Answers](https://msia.github.io/bootcamp-2021/exercises/R5-R6_exercises_with_answers.html)          |
+| Mon, 9/20 | R7      | Data visualization with ggplot                                                                             | [Lecture notes](https://msia.github.io/bootcamp-2021/lecturenotes/R7_lecturenotes)                                                                                                     | [Slides](https://msia.github.io/bootcamp-2021/lectureslides/R7_slides)                                                                                         | [Exercises](https://github.com/kumarhk/bootcamp-2021/blob/master/exercises/R7_exercises.md)                                                                                                                          |
+| Mon, 9/20 | R8      | Final exercise                                                                                             |                                                                                                                                                                                        |                                                                                                                                                                | [Exercise](https://github.com/MSIA/bootcamp-2021/blob/master/exercises/R8_final-exercise-instructions.md)                                                                                            |
 
 ## Resources
+
+### R
+
+Here are some resources for learning R:
+
+-   [Library of free learning resources](https://sites.northwestern.edu/researchcomputing/category/learning-resources/), from NUIT RCS
+-   [Compilation of resources often used by social scientists](https://efarristcu.medium.com/teaching-myself-r-c03c52361bed), from Emily Farris
+-   [`learnr` interactive tutorials](https://rstudio.github.io/learnr/), from RStudio
+-   [Dataquest](https://www.it.northwestern.edu/research/campus-events/data-camp.html) (coursework license available from NUIT)
 
 ### Shell
 
@@ -37,14 +47,13 @@ Michael Hartl also wrote [Learn Enough Git to be Dangerous](https://www.learneno
 
 NUIT also has a [Git resource list](https://github.com/nuitrcs/gitworkshop).
 
-
 ## Authorship
 
-The R materials used for R1-R5 are based on the [Intro to R workshop](https://github.com/nuitrcs/r_intro_june2018) from NUIT Research Computing Services, created by Christina Maimone. They have been expanded and modified by Kumar Ramanathan and Richard Morel. The materials on data.table used in R6 were originally developed by Ali Ehlen. The materials on ggplot2 used in R7 were originally developed by Kumar Ramanathan. Richard Morel, Ali Ehlen, and Kumar Ramanathan all jointly developed the overarching sequence of the sessions as well as the synthetic final exercise in R8. 
+The R materials used for R1-R5 are based on the [Intro to R workshop](https://github.com/nuitrcs/r_intro_june2018) from NUIT Research Computing Services, created by Christina Maimone. They have been expanded and modified by Kumar Ramanathan and Richard Morel. The materials on data.table used in R6 were originally developed by Ali Ehlen. The materials on ggplot2 used in R7 were originally developed by Kumar Ramanathan. Richard Morel, Ali Ehlen, and Kumar Ramanathan all jointly developed the overarching sequence of the sessions as well as the synthetic final exercise in R8.
 
 ## Contact information
 
-- Kumar Ramanathan: [Email](mailto:kumar.ramanathan@u.northwestern.edu) | [Website](http://www.kumar.fyi)
-- Tucker Lewis: [Email](mailto:matthewlewis2018@u.northwestern.edu) 
-- Richard Morel: [Email](mailto:richard.morel@u.northwestern.edu) | [Website](http://ramorel.github.io)
-- Ali Ehlen: [Email](mailto:AnnalieseEhlen2020@u.northwestern.edu)
+-   Kumar Ramanathan: [Email](mailto:kumar.ramanathan@u.northwestern.edu) \| [Website](http://www.kumar.fyi)
+-   Tucker Lewis: [Email](mailto:matthewlewis2018@u.northwestern.edu)
+-   Richard Morel: [Email](mailto:richard.morel@u.northwestern.edu) \| [Website](http://ramorel.github.io)
+-   Ali Ehlen: [Email](mailto:AnnalieseEhlen2020@u.northwestern.edu)

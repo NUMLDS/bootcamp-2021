@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="generator" content="pandoc">
-  <meta name="dcterms.date" content="2021-09-10" />
+  <meta name="dcterms.date" content="2021-09-12" />
   <title>Advanced R: Day 3</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -517,9 +517,9 @@ document.getElementsByTagName('head')[0].appendChild(style);
 <section>
     <h1 class="title">Advanced R: Day 3</h1>
   <h1 class="subtitle">Data visualization with ggplot2</h1>
-    <h2 class="author"><div class="line-block">Richard Paquin Morel<br />
-(slides created by Kumar Ramanathan)</div></h2>
-    <h3 class="date">2021-09-10</h3>
+    <h2 class="author"><div class="line-block">Kumar Ramanathan<br />
+(with edits by Richard Paquin Morel)</div></h2>
+    <h3 class="date">2021-09-12</h3>
 </section>
 
 <section>
@@ -1074,7 +1074,7 @@ See lecture notes for details on what’s going on inside the scale function. Or
 <pre><code>## `summarise()` has grouped output by &#39;date&#39;. You can override using the `.groups` argument.</code></pre>
 <div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Take a look at our prepared data</span></span>
 <span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(long_merged_energy_regroup)</span></code></pre></div>
-<pre><code>## # A tibble: 6 × 3
+<pre><code>## # A tibble: 6 x 3
 ## # Groups:   date [1]
 ##   date       group      output
 ##   &lt;date&gt;     &lt;chr&gt;       &lt;dbl&gt;

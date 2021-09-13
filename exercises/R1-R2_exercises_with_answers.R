@@ -1,7 +1,7 @@
 ############ MSiA Boot Camp: Intro to R: Day 1 Exercises - ANSWER KEY #############
 ######### by Kumar Ramanathan, based on materials from Christina Maimone ##########
 
-#### REVIEW: BASICS AND DATA TYPES ####
+#### BASICS AND DATA TYPES ####
 
 #### Arithmetic ####
 
@@ -11,14 +11,28 @@ x <- 5
 # Multiply x by 3
 x*3
 
-# Take the log of the above (Hint, you need the function log() here)
-log(x*3)
+# Divide x by 2
+x/2
 
 # Subtract 4 from the above
-log(x*3)-4
+(x/2)-4
 
 # Square the above
-(log(x*3)-4)^2
+((x/2)-4)^2
+
+#### Functions ####
+
+# Look up the help file for log
+?log
+
+# Take the natural log of 10
+log(10)
+
+# Take the log of 10 with base-19
+log(10, base=10)
+
+# Store the result of log(10) as a variable
+y <- log(10)
 
 #### Comparisons and Logical Operators ####
 
@@ -47,7 +61,7 @@ library(tidyverse)
 # (Hint: remember what ? does)
 ?recode
 
-#### REVIEW: DATA STRUCTURES ####
+#### DATA STRUCTURES ####
 
 #### Vectors ####
 
@@ -111,11 +125,8 @@ sum(is.na(mat))
 # Load one of R's example data frames, mtcars
 data(mtcars)
 
-# Identify the number of observations (rows) and number of variables (columns)
-dim(mtcars)
-
-# Identify the names of the variables
-names(mtcars)
+# Identify the number of observations (rows), number of variables (columns), and names of variables in the data frame
+str(mtcars)
 
 # Select the variable 'mpg'
 mtcars$mpg
@@ -138,6 +149,7 @@ gapminder <- read.csv("data/gapminder5.csv", stringsAsFactors=FALSE)
 library(readr)
 
 # Read gapminder data with read_csv()
+# Note: this assumes that the csv file is stored in a sub-directory called "data"
 gapminder <- read_csv("data/gapminder5.csv")
 
 #### DATA MANIPULATION ####
@@ -150,12 +162,11 @@ summary(gapminder)
 # Find the mean of the variable pop
 mean(gapminder$pop)
 
-# Create a frequency table of the variable 'year'
-# Hint: use table()
+# Create a frequency table of the variable 'year' using table()
 table(gapminder$year)
 
-# Create a proportion table of the variable 'continent'
-# Hint: use prop.table()
+# Create a proportion table of the variable 'continent' using prop.table()
+# Hint: check the help file for prop.table() to see what the input should be
 prop.table(table(gapminder$continent))
 
 #### Subsetting and Sorting ####
@@ -175,7 +186,7 @@ head(gapminder07[order(gapminder07$pop, decreasing=TRUE),])
 
 #### Adding and removing columns ####
 
-# See lecture notes for more guidance. We will practice this skill in the next section.
+# See lecture notes for more guidance. We will practice this skill later in the boot camp.
 
 
 #### Recoding variables ####
@@ -211,7 +222,7 @@ aggregate(gapminder07$lifeExp ~ gapminder07$continent, FUN = mean)
 # Calculate the correlation between 'lifeExp' and 'gdpPercap'.
 cor(gapminder07$lifeExp, gapminder07$gdpPercap)
 
-# Use a t-test to evaluate the difference between 'gdpPercap' in "high" and "low" life expectancy countries. Store the results as t1, and then print out t1.
+# Use a t-test to evaluate the difference in 'gdpPercap' between "high" and "low" life expectancy countries. Store the results as t1, and then print out t1.
 t1 <- t.test(gdpPercap ~ lifeExp_highlow, data=gapminder07)
 t1
 
@@ -230,8 +241,9 @@ summary(reg1)
 
 #### Writing a data file ####
 
-# Save the gapminder07 data frame as a CSV file using write.csv() in the "data" subfolder within the working directory
-# Set the argument `row.names = FALSE`.
+# Save the data frame gapminder07 in the same directory that gapminder5.csv is located.
+# If you use write.csv(), set the argument row.names = FALSE. 
+# If you use write_csv(), it does not include row names/numbers by default.
 write.csv(gapminder07, file="data/gapminder07.csv", row.names=FALSE)
 
 #### Save R objects ####
