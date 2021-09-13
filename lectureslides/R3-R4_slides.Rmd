@@ -1,6 +1,6 @@
 ---
 title: "Intro to R: Loops, Conditionals, Functions"
-author: "Richard Paquin Morel"
+Materials: "Richard Paquin Morel"
 date: "`r Sys.Date()`"
 output: revealjs::revealjs_presentation
 params:
@@ -15,7 +15,7 @@ knitr::opts_chunk$set(echo = TRUE, fig.height = 4.35, fig.width = 4.75)
 notes<-params$notes
 ```
 
-## Remember our data from this morning...
+## Remember our data from Monday...
 
 ```{r revisiting the data}
 gapminder <- read.csv(here::here("data", "gapminder5.csv"))
@@ -570,7 +570,7 @@ for (i in years) {
 - Rmarkdown runs R code, compiles, and produces a report in chosen format
 - This presentation was created using Rmarkdown!
 
-## Day 1, Part 2 Exercise
+## Day 3, Part 2 Exercise
 
 1) Open the `rmd_exercise_template.Rmd`
 2) Save as: `Day1Part2RExercise_LastnameFirstname.Rmd`.

@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="generator" content="pandoc">
-  <meta name="author" content="Richard Paquin Morel, adapted by Kumar Ramanathan" />
-  <meta name="dcterms.date" content="2021-09-10" />
+  <meta name="author" content="Richard Paquin Morel, adapted by Kumar Ramanathans" />
+  <meta name="dcterms.date" content="2021-09-12" />
   <title>Advanced R: Reshaping, merging, and dplyr</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -517,8 +517,8 @@ document.getElementsByTagName('head')[0].appendChild(style);
 
 <section>
     <h1 class="title">Advanced R: Reshaping, merging, and dplyr</h1>
-    <h2 class="author">Richard Paquin Morel, adapted by Kumar Ramanathan</h2>
-    <h3 class="date">2021-09-10</h3>
+    <h2 class="author">Richard Paquin Morel, adapted by Kumar Ramanathans</h2>
+    <h3 class="date">2021-09-12</h3>
 </section>
 
 <section>
@@ -564,7 +564,7 @@ document.getElementsByTagName('head')[0].appendChild(style);
 <section id="dealing-with-dates-and-times" class="slide level2">
 <h2>Dealing with dates and times</h2>
 <ul>
-<li>Notice that the first variable in both dataset is the called “datetime”</li>
+<li>Notice that the first variable in both datasets is called “datetime”</li>
 <li>What class are these variables?</li>
 </ul>
 <div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(generation<span class="sc">$</span>datetime)</span></code></pre></div>
@@ -1538,7 +1538,7 @@ document.getElementsByTagName('head')[0].appendChild(style);
 <span id="cb66-3"><a href="#cb66-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">total_usage =</span> <span class="fu">rowSums</span>(merged_energy, <span class="at">na.rm =</span> T)) <span class="sc">%&gt;%</span> </span>
 <span id="cb66-4"><a href="#cb66-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">total_usage =</span> <span class="fu">sum</span>(total_usage, <span class="at">na.rm =</span> T))</span></code></pre></div>
 <pre><code>## Error: Problem with `mutate()` column `total_usage`.
-## ℹ `total_usage = rowSums(merged_energy, na.rm = T)`.
+## i `total_usage = rowSums(merged_energy, na.rm = T)`.
 ## x &#39;x&#39; must be numeric</code></pre>
 </section>
 <section id="try-piping" class="slide level2">
@@ -1572,7 +1572,7 @@ document.getElementsByTagName('head')[0].appendChild(style);
 <div class="sourceCode" id="cb70"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb70-1"><a href="#cb70-1" aria-hidden="true" tabindex="-1"></a>long_merged_energy <span class="sc">%&gt;%</span> </span>
 <span id="cb70-2"><a href="#cb70-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(source) <span class="sc">%&gt;%</span> </span>
 <span id="cb70-3"><a href="#cb70-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">sum_usage =</span> <span class="fu">sum</span>(usage, <span class="at">na.rm =</span> T))</span></code></pre></div>
-<pre><code>## # A tibble: 12 × 2
+<pre><code>## # A tibble: 12 x 2
 ##    source      sum_usage
 ##    &lt;fct&gt;           &lt;dbl&gt;
 ##  1 biogas         39427.
@@ -1603,7 +1603,7 @@ document.getElementsByTagName('head')[0].appendChild(style);
 <span id="cb72-4"><a href="#cb72-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(year) <span class="sc">%&gt;%</span> </span>
 <span id="cb72-5"><a href="#cb72-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">mean_le =</span> <span class="fu">mean</span>(lifeExp, <span class="at">na.rm =</span> T),</span>
 <span id="cb72-6"><a href="#cb72-6" aria-hidden="true" tabindex="-1"></a>            <span class="at">sd_lf =</span> <span class="fu">sd</span>(lifeExp, <span class="at">na.rm =</span> T))</span></code></pre></div>
-<pre><code>## # A tibble: 12 × 3
+<pre><code>## # A tibble: 12 x 3
 ##     year mean_le sd_lf
 ##    &lt;int&gt;   &lt;dbl&gt; &lt;dbl&gt;
 ##  1  1952    49.1  12.2
@@ -1635,7 +1635,7 @@ document.getElementsByTagName('head')[0].appendChild(style);
 <span id="cb74-5"><a href="#cb74-5" aria-hidden="true" tabindex="-1"></a>       <span class="at">value.name =</span> <span class="st">&quot;usage&quot;</span>) <span class="sc">%&gt;%</span> </span>
 <span id="cb74-6"><a href="#cb74-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(source) <span class="sc">%&gt;%</span> </span>
 <span id="cb74-7"><a href="#cb74-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">mean_usage =</span> <span class="fu">mean</span>(usage, <span class="at">na.rm =</span> T))</span></code></pre></div>
-<pre><code>## # A tibble: 4 × 2
+<pre><code>## # A tibble: 4 x 2
 ##   source      mean_usage
 ##   &lt;fct&gt;            &lt;dbl&gt;
 ## 1 large_hydro      2968.

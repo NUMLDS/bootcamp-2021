@@ -275,7 +275,7 @@ generation_dt[solar > 0, max(natural_gas), by = mday(datetime)]
 > - `dcast`
 > - `merge`
 > - `order`
-> - This means we can repeat what we did this morning almost exactly
+> - This means we can repeat what we did with dplyr almost exactly
 
 ## `dplyr` -> `data.table`
 

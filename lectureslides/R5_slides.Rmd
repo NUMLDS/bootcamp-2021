@@ -1,6 +1,6 @@
 ---
 title: "Advanced R: Reshaping, merging, and dplyr"
-author: "Richard Paquin Morel, adapted by Kumar Ramanathan"
+author: "Richard Paquin Morel, adapted by Kumar Ramanathans"
 date: "`r Sys.Date()`"
 output: revealjs::revealjs_presentation
 params:
@@ -42,7 +42,7 @@ str(generation)
 
 ## Dealing with dates and times
 
-- Notice that the first variable in both dataset is the called "datetime"
+- Notice that the first variable in both datasets is called "datetime"
 - What class are these variables?
 
 ```{r}
