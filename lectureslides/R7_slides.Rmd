@@ -2,8 +2,8 @@
 title: 'Advanced R: Day 3'
 subtitle: 'Data visualization with ggplot2'
 author: |
-  | Richard Paquin Morel
-  | (slides created by Kumar Ramanathan)
+  | Kumar Ramanathan 
+  | (with edits by Richard Paquin Morel)
 date: "`r Sys.Date()`"
 output: 
   revealjs::revealjs_presentation:
