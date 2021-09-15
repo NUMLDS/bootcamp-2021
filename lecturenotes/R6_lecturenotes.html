@@ -9,9 +9,9 @@
 <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
-<meta name="author" content="Ali Ehlen" />
+<meta name="author" content="Ali Ehlen with additions by Tucker Lewis" />
 
-<meta name="date" content="2021-09-12" />
+<meta name="date" content="2021-09-15" />
 
 <title>Advanced R - data.table</title>
 
@@ -242,8 +242,8 @@ div.tocify {
 
 
 <h1 class="title toc-ignore">Advanced R - data.table</h1>
-<h4 class="author">Ali Ehlen</h4>
-<h4 class="date">2021-09-12</h4>
+<h4 class="author">Ali Ehlen with additions by Tucker Lewis</h4>
+<h4 class="date">2021-09-15</h4>
 
 </div>
 
@@ -949,6 +949,132 @@ imports_dt</code></pre>
 ## 166: 2019-09-09 21:00:00  9690.167    18165.25            NA
 ## 167: 2019-09-09 22:00:00  7998.000    16054.75            NA
 ## 168: 2019-09-09 23:00:00  7570.750    14466.17            NA</code></pre>
+</div>
+<div id="library-management" class="section level1">
+<h1>Library Management</h1>
+<ul>
+<li>dplyr, data.table, and reshape2 not only share similar functions, but sometimes share function names</li>
+<li>in these cases, the package loaded most recently will be the function used</li>
+<li>this is important for many reasons, but especially when working between data.frame and data.table</li>
+<li>let’s look at the function ‘melt’</li>
+</ul>
+</div>
+<div id="library-management-1" class="section level1">
+<h1>Library Management</h1>
+<ul>
+<li>let’s look at the function ‘melt’</li>
+<li>we know that melt is a data.table function</li>
+<li>we’ve been working a lot with data.tables</li>
+<li>what package do we expect melt to be loading from?</li>
+</ul>
+</div>
+<div id="library-management-2" class="section level1">
+<h1>Library Management</h1>
+<ul>
+<li>what package do we expect melt to be loading from?</li>
+</ul>
+<pre class="r"><code>melt</code></pre>
+<pre><code>## function (data, ..., na.rm = FALSE, value.name = &quot;value&quot;) 
+## {
+##     UseMethod(&quot;melt&quot;, data)
+## }
+## &lt;bytecode: 0x0000000020726200&gt;
+## &lt;environment: namespace:reshape2&gt;</code></pre>
+</div>
+<div id="library-management-3" class="section level1">
+<h1>Library Management</h1>
+<ul>
+<li>and if we use this function, what object do we receive?</li>
+</ul>
+<pre class="r"><code>cat(&#39;is.data.table: &#39;, is.data.table(melt(imports_dt, 0)),
+    &#39;\nis.data.frame: &#39;, is.data.frame(melt(imports_dt, 0)))</code></pre>
+<pre><code>## is.data.table:  FALSE 
+## is.data.frame:  TRUE</code></pre>
+</div>
+<div id="library-management-4" class="section level1">
+<h1>Library Management</h1>
+<ul>
+<li>how to specify functions</li>
+<li>explicit function name</li>
+<li>the function is still there, but given a verbose reference</li>
+</ul>
+<pre class="r"><code>is.data.table(
+  melt.data.table(imports_dt,
+                          id.vars = &quot;datetime&quot;,
+                          variable.name = &quot;source&quot;,
+                          value.name = &quot;output&quot;))</code></pre>
+<pre><code>## [1] TRUE</code></pre>
+</div>
+<div id="library-management-5" class="section level1">
+<h1>Library Management</h1>
+<ul>
+<li>how to specify functions</li>
+<li>reference intended library</li>
+</ul>
+<pre class="r"><code>is.data.table(
+  data.table::melt(imports_dt,
+                          id.vars = &quot;datetime&quot;,
+                          variable.name = &quot;source&quot;,
+                          value.name = &quot;output&quot;))</code></pre>
+<pre><code>## [1] TRUE</code></pre>
+<div id="library-management-6" class="section level2">
+<h2>Library Management</h2>
+<ul>
+<li>how to specify functions</li>
+<li>set function reference</li>
+</ul>
+<pre class="r"><code>melt &lt;- data.table::melt
+
+is.data.table(
+              melt(imports_dt,
+                          id.vars = &quot;datetime&quot;,
+                          variable.name = &quot;source&quot;,
+                          value.name = &quot;output&quot;))</code></pre>
+<pre><code>## [1] TRUE</code></pre>
+</div>
+</div>
+<div id="library-management-7" class="section level1">
+<h1>Library Management</h1>
+<ul>
+<li>how to specify functions</li>
+<li>reload libraries in desired order</li>
+</ul>
+<pre class="r"><code>#knit is crashing here, but the output is in slides
+#unloadNamespace(&quot;reshape2&quot;)
+#unloadNamespace(&quot;data.table&quot;)
+#library(reshape2)
+#library(data.table)</code></pre>
+<pre class="r"><code>is.data.table(
+  melt(imports_dt,
+                          id.vars = &quot;datetime&quot;,
+                          variable.name = &quot;source&quot;,
+                          value.name = &quot;output&quot;))</code></pre>
+<pre><code>## [1] TRUE</code></pre>
+</div>
+<div id="library-management-8" class="section level1">
+<h1>Library Management</h1>
+<p>-lastly, a function to review all overwritten functions</p>
+<pre class="r"><code>conflicted &lt;- base::conflicts()
+
+which_packages_by_function &lt;- lapply(conflicted, utils::find)
+
+names(which_packages_by_function) &lt;- conflicted
+
+which_packages_by_function[0:5]</code></pre>
+<pre><code>## $melt
+## [1] &quot;.GlobalEnv&quot;         &quot;package:reshape2&quot;   &quot;package:data.table&quot;
+## 
+## $dcast
+## [1] &quot;package:reshape2&quot;   &quot;package:data.table&quot;
+## 
+## $melt
+## [1] &quot;.GlobalEnv&quot;         &quot;package:reshape2&quot;   &quot;package:data.table&quot;
+## 
+## $`body&lt;-`
+## [1] &quot;package:methods&quot; &quot;package:base&quot;   
+## 
+## $kronecker
+## [1] &quot;package:methods&quot; &quot;package:base&quot;</code></pre>
 </div>
 <div id="final-thoughts" class="section level1">
 <h1>Final thoughts</h1>

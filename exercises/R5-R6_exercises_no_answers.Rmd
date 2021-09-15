@@ -88,13 +88,13 @@ long_ca_energy_dp <- generation_dp %>%
 
 all_sources <- merge(generation_dt, imports_dt, by = "datetime")
 
-long_ca_energy_dt <- melt(all_sources, 
+long_ca_energy_dt <- melt.data.table(all_sources, 
                           id.vars = "datetime",
                           variable.name = "source",
                           value.name = "output")
 
 # another option: advanced join
-long_ca_energy_dt <- melt(generation_dt[imports_dt, on = "datetime"], 
+long_ca_energy_dt <- melt.data.table(generation_dt[imports_dt, on = "datetime"], 
                           id.vars = "datetime",
                           variable.name = "source",
                           value.name = "output")
